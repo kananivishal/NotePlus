@@ -1,0 +1,68 @@
+DROP DATABASE IF EXISTS `NotePlus`;
+CREATE DATABASE `NotePlus`;
+USE `NotePlus`;
+
+CREATE TABLE `Otps`
+(
+    `Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `Email` VARCHAR(50) NOT NULL,
+    `Otp` VARCHAR(6) NOT NULL,
+    `CreatedOnDateTime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `IsVarified` BOOLEAN DEFAULT 0,
+    `VarifiedOnDateTime` TIMESTAMP DEFAULT '2000-01-01 00:00:00'
+);
+
+CREATE TABLE `Users`
+(
+    `Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `Email` VARCHAR(50) NOT NULL,
+    `Password` VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE `UserProfile`
+(
+    `Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `Username` VARCHAR(50) NOT NULL,
+    `Gender` VARCHAR(10) DEFAULT NULL,
+    `Contact` VARCHAR(50) DEFAULT NULL,
+    `ImageName` VARCHAR(50) DEFAULT 'dummy.jpg',
+
+    `UserId` INT NOT NULL,
+    CONSTRAINT `FkUserIdInUserProfile` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`)
+);
+
+CREATE TABLE `Folder`(
+    `Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `Name` VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE `Notes`
+(
+    `Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `Title` VARCHAR(50) NOT NULL,
+    `Body` TEXT NOT NULL,
+    `CreatedOnDateTime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    `UpdateOnDateTime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `IsPinned` BOOLEAN DEFAULT 0,
+    `IsFavourite` BOOLEAN DEFAULT 0,
+
+    `UserId` INT NOT NULL,
+    CONSTRAINT `FkUserIdInNotes` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`),
+
+    `FolderId` INT NOT NULL,
+    CONSTRAINT `FkFolderId` FOREIGN KEY (`FolderId`) REFERENCES `Folder`(`Id`)
+);
+
+CREATE TABLE `Collaborator`
+(
+    `Id` INT PRIMARY KEY AUTO_INCREMENT,
+
+    `OwnerId` INT NOT NULL,
+    CONSTRAINT `FkOwnerIdInSharedNotes` FOREIGN KEY (`OwnerId`) REFERENCES `Users`(`Id`),
+
+    `CollaboratorId` INT NOT NULL,
+    CONSTRAINT `FkCollaboratorIdInSharedNotes` FOREIGN KEY (`CollaboratorId`) REFERENCES `Users`(`Id`),
+
+    `NoteId` INT NOT NULL,
+    CONSTRAINT `FkNoteIdInSharedNotes` FOREIGN KEY (`NoteId`) REFERENCES `Notes`(`Id`)
+);
