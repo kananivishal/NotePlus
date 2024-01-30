@@ -1,6 +1,6 @@
 <?php
-include "../NotePlus/Design/includes/header.php";
-include "../NotePlus/Design/includes/sidebar.php";
+include "../NotePlus/includes/header.php";
+include "../NotePlus/includes/sidebar.php";
 ?>
 <div class="card card-block card-stretch">
     <div class="card-body custom-notes-space">
@@ -264,17 +264,17 @@ include "../NotePlus/Design/includes/sidebar.php";
                                         <ul class="row mb-0 p-0 list-inline flex-wrap align-items-center">
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/08.jpg" class="img-fluid note-image rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/08.jpg" class="img-fluid note-image rounded" alt="" />
                                                 </a>
                                             </li>
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/05.jpg" class="img-fluid note-image rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/05.jpg" class="img-fluid note-image rounded" alt="" />
                                                 </a>
                                             </li>
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/03.jpg" class="img-fluid note-image rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/03.jpg" class="img-fluid note-image rounded" alt="" />
                                                 </a>
                                             </li>
                                         </ul>
@@ -1021,17 +1021,17 @@ include "../NotePlus/Design/includes/sidebar.php";
                                         <ul class="row mb-0 p-0 list-inline flex-wrap align-items-center">
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/01.jpg" class="img-fluid rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/01.jpg" class="img-fluid rounded" alt="" />
                                                 </a>
                                             </li>
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/02.jpg" class="img-fluid rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/02.jpg" class="img-fluid rounded" alt="" />
                                                 </a>
                                             </li>
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/03.jpg" class="img-fluid rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/03.jpg" class="img-fluid rounded" alt="" />
                                                 </a>
                                             </li>
                                         </ul>
@@ -1523,17 +1523,17 @@ include "../NotePlus/Design/includes/sidebar.php";
                                         <ul class="row mb-0 p-0 list-inline flex-wrap align-items-center">
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/01.jpg" class="img-fluid rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/01.jpg" class="img-fluid rounded" alt="" />
                                                 </a>
                                             </li>
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/02.jpg" class="img-fluid rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/02.jpg" class="img-fluid rounded" alt="" />
                                                 </a>
                                             </li>
                                             <li class="col-4">
                                                 <a href="#">
-                                                    <img src="/noteplus/design/assets/images/gallery/grid/03.jpg" class="img-fluid rounded" alt="" />
+                                                    <img src="/noteplus/assets/images/gallery/grid/03.jpg" class="img-fluid rounded" alt="" />
                                                 </a>
                                             </li>
                                         </ul>
@@ -1713,5 +1713,5 @@ include "../NotePlus/Design/includes/sidebar.php";
     </div>
 </div>
 <?php
-include "../NotePlus/Design/includes/footer.php";
+include "../NotePlus/includes/footer.php";
 ?>

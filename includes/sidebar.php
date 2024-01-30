@@ -1,7 +1,7 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
         <a href="/noteplus/index.php" class="header-logo">
-            <img src="/noteplus/design/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
+            <img src="/noteplus/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
             <h4 class="logo-title ml-3">NotePlus</h4>
         </a>
         <div class="iq-menu-bt-sidebar">
@@ -10,31 +10,31 @@
     </div>
     <div class="sidebar-caption dropdown">
         <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="/noteplus/design/assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user">
+            <img src="/noteplus/assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user">
             <div class="caption">
                 <h6 class="mb-0 line-height">Bud Wiser</h6>
             </div>
             <i class="las la-angle-down"></i>
         </a>
         <div class="dropdown-menu w-100 border-0 my-2" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item mb-2" href="/noteplus/design/app/user-profile.html">
+            <a class="dropdown-item mb-2" href="/noteplus/app/user-profile.html">
                 <i class="lar la-user-circle font-size-20 mr-1"></i>
                 <span class="mt-2">My Profile</span>
             </a>
-            <a class="dropdown-item mb-2" href="/noteplus/design/app/user-profile-edit.html">
+            <a class="dropdown-item mb-2" href="/noteplus/app/user-profile-edit.html">
                 <i class="las la-user-edit font-size-20 mr-1"></i>
                 <span>Edit Profile</span>
             </a>
-            <!-- <a class="dropdown-item mb-2" href="/noteplus/design/app/user-account-setting.html">
+            <!-- <a class="dropdown-item mb-2" href="/noteplus/app/user-account-setting.html">
                 <i class="las la-user-cog font-size-20 mr-1"></i>
                 <span>Account Settings</span>
             </a>
-            <a class="dropdown-item mb-3" href="/noteplus/design/app/user-privacy-setting.html">
+            <a class="dropdown-item mb-3" href="/noteplus/app/user-privacy-setting.html">
                 <i class="las la-user-shield font-size-20 mr-1"></i>
                 <span>Privacy Settings</span>
             </a> -->
             <hr class="my-2">
-            <a class="dropdown-item" href="/noteplus/design/backend/auth-sign-in.html">
+            <a class="dropdown-item" href="/noteplus/backend/auth-sign-in.html">
                 <i class="las la-sign-out-alt font-size-20 mr-1"></i>
                 <span>Logout</span>
             </a>
@@ -74,7 +74,7 @@
                     </a>
                     <ul id="notebooks" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="/noteplus/design/backend/page-project-plans.html" class="svg-icon">
+                            <a href="/noteplus/backend/page-project-plans.html" class="svg-icon">
                                 <i>
                                     <svg width="20" class="svg-icon" id="iq-main-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
@@ -84,7 +84,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="/noteplus/design/backend/page-routinenotes.html" class="svg-icon">
+                            <a href="/noteplus/backend/page-routinenotes.html" class="svg-icon">
                                 <i>
                                     <svg width="20" class="svg-icon" id="iq-main-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
@@ -94,7 +94,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="/noteplus/design/backend/page-planning.html" class="svg-icon">
+                            <a href="/noteplus/backend/page-planning.html" class="svg-icon">
                                 <i>
                                     <svg width="20" class="svg-icon" id="iq-main-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
@@ -130,7 +130,7 @@
                             </a>
                             <ul id="user" class="iq-submenu collapse" data-parent="#otherpage">
                                 <li class="">
-                                    <a href="/noteplus/design/app/user-profile.html" class="svg-icon">
+                                    <a href="/noteplus/app/user-profile.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-user-1-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -139,7 +139,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/app/user-add.html" class="svg-icon">
+                                    <a href="/noteplus/app/user-add.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-user-1-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -148,7 +148,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/app/user-list.html" class="svg-icon">
+                                    <a href="/noteplus/app/user-list.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-user-1-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -171,7 +171,7 @@
                             </a>
                             <ul id="ui" class="iq-submenu collapse" data-parent="#otherpage">
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-avatars.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-avatars.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -180,7 +180,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-alerts.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-alerts.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
@@ -189,7 +189,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-badges.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-badges.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -198,7 +198,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-breadcrumb.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-breadcrumb.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -207,7 +207,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-buttons.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-buttons.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
@@ -216,7 +216,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-buttons-group.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-buttons-group.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-5" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -225,7 +225,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-boxshadow.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-boxshadow.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-6" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -234,7 +234,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-colors.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-colors.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -243,7 +243,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-cards.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-cards.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -252,7 +252,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-carousel.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-carousel.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
@@ -261,7 +261,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-grid.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-grid.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -270,7 +270,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-helper-classes.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-helper-classes.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-11" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -279,7 +279,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-images.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-images.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -288,7 +288,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-list-group.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-list-group.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon feather feather-list" id="iq-ui-1-13" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <line x1="8" y1="6" x2="21" y2="6"></line>
@@ -302,7 +302,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-media-object.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-media-object.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-14" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -311,7 +311,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-modal.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-modal.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon feather feather-columns" id="iq-ui-1-15" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"></path>
@@ -320,7 +320,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-notifications.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-notifications.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -329,7 +329,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-pagination.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-pagination.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-17" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
@@ -338,7 +338,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-popovers.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-popovers.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-18" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -359,7 +359,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-progressbars.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-progressbars.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon feather feather-hard-drive" id="iq-ui-1-19" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <line x1="22" y1="12" x2="2" y2="12"></line>
@@ -371,7 +371,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-typography.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-typography.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-20" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
@@ -381,7 +381,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-tabs.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-tabs.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-21" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
@@ -391,7 +391,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-tooltips.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-tooltips.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-22" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -404,7 +404,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/ui-embed-video.html" class="svg-icon">
+                                    <a href="/noteplus/backend/ui-embed-video.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-ui-1-23" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -428,7 +428,7 @@
                             </a>
                             <ul id="auth" class="iq-submenu collapse" data-parent="#otherpage">
                                 <li class="">
-                                    <a href="/noteplus/design/backend/auth-sign-in.html" class="svg-icon">
+                                    <a href="/noteplus/backend/auth-sign-in.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-auth-1-1" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -438,7 +438,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/auth-sign-up.html" class="svg-icon">
+                                    <a href="/noteplus/backend/auth-sign-up.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-auth-1-2" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -448,7 +448,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/auth-recoverpw.html" class="svg-icon">
+                                    <a href="/noteplus/backend/auth-recoverpw.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-auth-1-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
@@ -458,7 +458,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/auth-confirm-mail.html" class="svg-icon">
+                                    <a href="/noteplus/backend/auth-confirm-mail.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-auth-1-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
@@ -468,7 +468,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/auth-lock-screen.html" class="svg-icon">
+                                    <a href="/noteplus/backend/auth-lock-screen.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon feather feather-lock" id="iq-auth-1-5" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -494,7 +494,7 @@
                             </a>
                             <ul id="pricing" class="iq-submenu collapse" data-parent="#otherpage">
                                 <li class="">
-                                    <a href="/noteplus/design/backend/pricing.html" class="svg-icon">
+                                    <a href="/noteplus/backend/pricing.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-extra-1-3-1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -505,7 +505,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/pricing-1.html" class="svg-icon">
+                                    <a href="/noteplus/backend/pricing-1.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-extra-1-3-2" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -534,7 +534,7 @@
                             </a>
                             <ul id="pages-error" class="iq-submenu collapse" data-parent="#otherpage">
                                 <li class="">
-                                    <a href="/noteplus/design/backend/pages-error.html" class="svg-icon">
+                                    <a href="/noteplus/backend/pages-error.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon feather feather-alert-circle" id="iq-extra-1-4-1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <circle cx="12" cy="12" r="10"></circle>
@@ -546,7 +546,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/noteplus/design/backend/pages-error-500.html" class="svg-icon">
+                                    <a href="/noteplus/backend/pages-error-500.html" class="svg-icon">
                                         <i class="">
                                             <svg class="svg-icon" id="iq-extra-1-4-2" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -567,7 +567,7 @@
                             </ul>
                         </li>
                         <li class="active">
-                            <a href="/noteplus/design/backend/pages-blank-page.html" class="svg-icon">
+                            <a href="/noteplus/backend/pages-blank-page.html" class="svg-icon">
                                 <i class="">
                                     <svg class="svg-icon" id="iq-extra-1-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
@@ -577,7 +577,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="/noteplus/design/backend/pages-maintenance.html" class="svg-icon">
+                            <a href="/noteplus/backend/pages-maintenance.html" class="svg-icon">
                                 <i class="">
                                     <svg class="svg-icon" id="iq-extra-1-9" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -629,7 +629,7 @@
                                             <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card pb-3 border-bottom">
                                                     <div class="">
-                                                        <img class="avatar-50 rounded-small" src="/noteplus/design/assets/images/user/01.jpg" alt="01">
+                                                        <img class="avatar-50 rounded-small" src="/noteplus/assets/images/user/01.jpg" alt="01">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -643,7 +643,7 @@
                                             <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
-                                                        <img class="avatar-50 rounded-small" src="/noteplus/design/assets/images/user/02.jpg" alt="02">
+                                                        <img class="avatar-50 rounded-small" src="/noteplus/assets/images/user/02.jpg" alt="02">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -657,7 +657,7 @@
                                             <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card pt-3">
                                                     <div class="">
-                                                        <img class="avatar-50 rounded-small" src="/noteplus/design/assets/images/user/03.jpg" alt="03">
+                                                        <img class="avatar-50 rounded-small" src="/noteplus/assets/images/user/03.jpg" alt="03">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -693,7 +693,7 @@
                                             <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card pb-3 border-bottom">
                                                     <div class="">
-                                                        <img class="avatar-50 rounded-small" src="/noteplus/design/assets/images/user/01.jpg" alt="01">
+                                                        <img class="avatar-50 rounded-small" src="/noteplus/assets/images/user/01.jpg" alt="01">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -707,7 +707,7 @@
                                             <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
-                                                        <img class="avatar-50 rounded-small" src="/noteplus/design/assets/images/user/02.jpg" alt="02">
+                                                        <img class="avatar-50 rounded-small" src="/noteplus/assets/images/user/02.jpg" alt="02">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -721,7 +721,7 @@
                                             <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card pt-3">
                                                     <div class="">
-                                                        <img class="avatar-50 rounded-small" src="/noteplus/design/assets/images/user/03.jpg" alt="03">
+                                                        <img class="avatar-50 rounded-small" src="/noteplus/assets/images/user/03.jpg" alt="03">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
