@@ -21,7 +21,7 @@ include "../NotePlus/includes/sidebar.php";
                         <a class="nav-link home" data-toggle="pill" data-init="fav-note" href="#favourite" role="tab" aria-selected="false">Favourite Notes</a>
                     </li>
                 </ul>
-                <div class="media align-items-top iq-grid">
+                <div ss="media align-items-top iq-grid">
                     <!-- <div class="view-btn rounded body-bg btn-dropdown filter-btn mr-3">
                         <div class="dropdown">
                             <span class="dropdown-toggle cursor-pointer" id="dropdownMenuButton003" data-toggle="dropdown">
