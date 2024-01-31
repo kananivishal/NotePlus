@@ -362,7 +362,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                         <i class="ri-menu-line wrapper-menu"></i>
-                        <a href="/noteplus/backend/index.html" class="header-logo">
+                        <a href="/noteplus/" class="header-logo">
                             <img src="/noteplus/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
 
                         </a>
@@ -536,7 +536,7 @@
                                             <span>Privacy Settings</span>
                                         </a>
                                         <hr class="my-1">
-                                        <a class="dropdown-item" href="/noteplus/backend/index.html">
+                                        <a class="dropdown-item" href="/noteplus/">
                                             <i class="las la-sign-out-alt font-size-20 mr-1"></i>
                                             <span>Logout</span>
                                         </a>
