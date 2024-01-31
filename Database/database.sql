@@ -22,10 +22,17 @@ CREATE TABLE `Users`
 CREATE TABLE `UserProfile`
 (
     `Id` INT PRIMARY KEY AUTO_INCREMENT,
-    `Username` VARCHAR(50) NOT NULL,
+    `Name` VARCHAR(50) NOT NULL,
+    `Phonenumber` VARCHAR(10) DEFAULT NULL,
+    `DateOfBirth` VARCHAR(50) DEFAULT NULL,
     `Gender` VARCHAR(10) DEFAULT NULL,
-    `Contact` VARCHAR(50) DEFAULT NULL,
-    `ImageName` VARCHAR(50) DEFAULT 'dummy.jpg',
+    `MaritalStatus` VARCHAR(50) DEFAULT NULL,
+    `Age` VARCHAR(50) DEFAULT NULL,
+    `Country` VARCHAR(50) DEFAULT NULL,
+    `State` VARCHAR(50) DEFAULT NULL,
+    `City` VARCHAR(50) DEFAULT NULL,
+    `Address` VARCHAR(300) DEFAULT NULL,
+    `ImageName` VARCHAR(100) DEFAULT 'dummy.jpg',
 
     `UserId` INT NOT NULL,
     CONSTRAINT `FkUserIdInUserProfile` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`)
