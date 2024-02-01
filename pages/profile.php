@@ -80,15 +80,15 @@ include "../includes/sidebar.php";
                         </div>
                         <div class="form-group col-md-6">
                             <label for="lname">Date of Birth:</label>
-                            <input type="text" class="form-control" id="lname" placeholder="Date of Birth" disabled>
+                            <input type="text" class="form-control" id="dob" placeholder="Date of Birth" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mobno">Mobile Number:</label>
-                            <input type="text" class="form-control" id="mobno" placeholder="Mobile Number" disabled>
+                            <input type="text" class="form-control" id="mobilenumber" placeholder="Mobile Number" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="altconno">Gender</label>
-                            <input type="text" class="form-control" id="altconno" placeholder="Gender" disabled>
+                            <input type="text" class="form-control" id="gender" placeholder="Gender" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email:</label>
@@ -96,15 +96,15 @@ include "../includes/sidebar.php";
                         </div>
                         <div class="form-group col-md-12">
                             <label for="add1">Address :</label>
-                            <input type="text" class="form-control" id="add1" placeholder="Address " disabled>
+                            <input type="text" class="form-control" id="address" placeholder="Address " disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="add2">Marital Status</label>
-                            <input type="text" class="form-control" id="add2" placeholder="Marital Status" disabled>
+                            <input type="text" class="form-control" id="merital" placeholder="Marital Status" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="add2">Age</label>
-                            <input type="text" class="form-control" id="add2" placeholder="Age" disabled>
+                            <input type="text" class="form-control" id="age" placeholder="Age" disabled>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="cname">Company Name:</label>
@@ -112,7 +112,7 @@ include "../includes/sidebar.php";
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Country:</label>
-                            <input type="text" class="form-control" id="city" placeholder="Country" disabled>
+                            <input type="text" class="form-control" id="country" placeholder="Country" disabled>
 
                         </div>
 
@@ -150,7 +150,7 @@ include "../includes/sidebar.php";
         </div>
     </div>
 </div>
-
+<script src="../js/profile.js"></script>
 <?php
 include "../includes/footer.php";
 ?>

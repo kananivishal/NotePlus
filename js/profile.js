@@ -1,0 +1,1 @@
+const data = ajaxRequest(path = "/profile/get.php");
