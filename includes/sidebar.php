@@ -814,7 +814,7 @@
                                             <a class="dropdown-item" href="#"><i class="lar la-heart mr-3"></i>Add
                                                 To Favourite</a>
                                             <a class="dropdown-item" href="#"><i class="las la-thumbtack mr-3"></i>Mark As Pin</a>
-                                            <a class="dropdown-item" href="#"><i class="las la-trash-alt mr-3"></i>Move to Trash</a>
+                                            <!-- <a class="dropdown-item" href="#"><i class="las la-trash-alt mr-3"></i>Move to Trash</a> -->
                                         </div>
                                     </div>
                                 </div>
