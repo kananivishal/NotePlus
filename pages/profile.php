@@ -105,25 +105,25 @@ include "../includes/sidebar.php";
                         <div class="form-group col-sm-6">
                             <label>Country:</label>
                             <input type="text" class="form-control" id="country" placeholder="Country" disabled>
-                            
+
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="state">State:</label>
                             <input type="text" class="form-control" id="state" placeholder="State" disabled>
                         </div>
-                        
+
                         <!-- <div class="form-group col-md-6">
                             <label for="pno">Pin Code:</label>
                             <input type="text" class="form-control" id="pno" placeholder="Pin Code">
                         </div> -->
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="city">Town/City:</label>
                             <input type="text" class="form-control" id="city" placeholder="Town/City" disabled>
                         </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="add1">Address :</label>
-                        <input type="text" class="form-control" id="address" placeholder="Address " disabled>
+                        <div class="form-group col-md-12">
+                            <label for="add1">Address :</label>
+                            <input type="text" class="form-control" id="address" placeholder="Address " disabled>
+                        </div>
                     </div>
                     <!-- <hr>
                     <h5 class="mb-3">Security</h5>
