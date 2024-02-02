@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>NotePlus | Responsive Bootstrap 4 Admin Dashboard Template</title>
+      <title>NotePlus</title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="../assets/images/favicon.ico" />
@@ -32,17 +32,17 @@
                      </div>      
                      <h3 class="mb-2">Sign In</h3>
                      <p>Login to stay connected.</p>
-                     <form>
+                     <form onsubmit="login(event)">
                         <div class="row">
                            <div class="col-lg-12">
                               <div class="floating-label form-group">
-                                 <input class="floating-input form-control" type="email" placeholder=" ">
+                                 <input class="floating-input form-control" type="email" id="email" placeholder=" ">
                                  <label>Email</label>
                               </div>
                            </div>
                            <div class="col-lg-12">
                               <div class="floating-label form-group">
-                                 <input class="floating-input form-control" type="password" placeholder=" ">
+                                 <input class="floating-input form-control" type="password" id="password" placeholder=" ">
                                  <label>Password</label>
                               </div>
                            </div>
@@ -56,11 +56,12 @@
                               <a href="/noteplus/pages/forgot-password.php" class="text-primary float-right">Forgot Password?</a>
                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <button type="submit" id="login" class="btn btn-primary">Sign In</button>
                         <p class="mt-3 mb-0">
                            Create an Account <a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a>
                         </p>
                      </form>
+                     <div id="message"></div>
                   </div>
                </div>
             </div>
@@ -68,6 +69,12 @@
       </section>
       </div>
     
+      <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+
+
+    <script src="/noteplus/js/login.js"></script>
+    <script src="/noteplus/js/init.js"></script>
+
     <!-- Backend Bundle JavaScript -->
     <script src="../assets/js/backend-bundle.min.js"></script>
     

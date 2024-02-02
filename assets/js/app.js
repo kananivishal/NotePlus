@@ -309,7 +309,7 @@ Index Of Script
         var favGrid = null;
         var pinGrid = null;
         function initMurri (type) {
-            console.log(type)
+            // console.log(type)
             switch (type) {
                 case 'shared-note':
                     if (!$('.shared-note-grid').hasClass('muuri')) {
