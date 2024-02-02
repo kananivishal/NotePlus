@@ -62,6 +62,7 @@
                                 <button type="button" class="btn btn-primary" onclick="nextStep('otp-form', 'password-form')">Verify OTP</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
+                            <!-- Password Form -->
                             <form id="password-form" style="display:none;">
                                 <p id="step-description">Enter your password.</p>
                                 <div class="row">
