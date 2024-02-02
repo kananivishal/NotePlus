@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>NotePlus | Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>NotePlus</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/noteplus/assets/images/favicon.ico" />
     <link rel="stylesheet" href="/noteplus/assets/css/backend-plugin.min.css?v=1.0.0">
@@ -45,21 +45,20 @@
                                         <label>Email</label>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="nextStep('email-form', 'otp-form')">Next</button>
+                                <button type="button" id="btnemail" class="btn btn-primary" onclick="sendOTP()">Next</button>
                                 <p class="mt-3 mb-0">Already have an Account <a href="/noteplus/pages/login.php" class="text-primary"><b>Sign In</b></a></p>
                             </form>
-
                             <!-- OTP Form -->
                             <form id="otp-form" style="display:none;">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="floating-label form-group">
-                                            <input class="floating-input form-control" type="number" placeholder="" id="otp" disabled>
+                                            <input class="floating-input form-control" type="number" placeholder="" id="otp">
                                             <label>OTP</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="nextStep('otp-form', 'password-form')">Verify OTP</button>
+                                <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
                             <!-- Password Form -->
@@ -68,20 +67,21 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="floating-label form-group">
-                                            <input class="floating-input form-control" type="password" placeholder="" disabled>
+                                            <input class="floating-input form-control" type="password" placeholder="" id="password">
                                             <label>Password</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="floating-label form-group">
-                                            <input class="floating-input form-control" type="password" placeholder="" disabled>
+                                            <input class="floating-input form-control" type="password" placeholder="" id="confirmPassword">
                                             <label>Confirm Password</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary">Submit</button>
+                                <button type="button" id="btnsignup" class="btn btn-primary" onclick="submitPassword()">Submit</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
+                            <div id="message">Error</div>
                         </div>
                     </div>
                 </div>
@@ -90,6 +90,9 @@
     </div>
 
     <!-- Your existing script tags -->
+    <script src="/noteplus/js/init.js"></script>
+    <script src="/noteplus/js/signup.js"></script>
+
     <script src="/noteplus/assets/js/backend-bundle.min.js"></script>
     <script src="/noteplus/assets/js/flex-tree.min.js"></script>
     <script src="/noteplus/assets/js/tree.js"></script>
@@ -99,42 +102,42 @@
     <script src="/noteplus/assets/js/slider.js"></script>
     <script src="/noteplus/assets/js/app.js"></script>
 
-    <script>
-        function nextStep(currentFormId, nextFormId) {
-            // Validate current form data if needed
-            var isValid = true; // Add your validation logic
+    <!-- <script>
+        // function nextStep(currentFormId, nextFormId) {
+        //     // Validate current form data if needed
+        //     var isValid = true; // Add your validation logic
 
-            if (isValid) {
-                // Hide current form and show next form
-                document.getElementById(currentFormId).style.display = 'none';
-                document.getElementById(nextFormId).style.display = 'block';
+        //     if (isValid) {
+        //         // Hide current form and show next form
+        //         document.getElementById(currentFormId).style.display = 'none';
+        //         document.getElementById(nextFormId).style.display = 'block';
 
-                // Update step description
-                if (nextFormId === 'otp-form') {
-                    document.getElementById('step-description').innerText = 'Enter the OTP sent to your email.';
-                } else if (nextFormId === 'password-form') {
-                    document.getElementById('step-description').innerText = 'Create your account by setting a password.';
-                }
-            }
-        }
+        //         // Update step description
+        //         if (nextFormId === 'otp-form') {
+        //             document.getElementById('step-description').innerText = 'Enter the OTP sent to your email.';
+        //         } else if (nextFormId === 'password-form') {
+        //             document.getElementById('step-description').innerText = 'Create your account by setting a password.';
+        //         }
+        //     }
+        // }
 
-        function verifyOTP() {
-            // Add your logic to verify the OTP
-            var isOTPVerified = true; // Change this to actual verification logic
+        // function verifyOTP() {
+        //     // Add your logic to verify the OTP
+        //     var isOTPVerified = true; // Change this to actual verification logic
 
-            if (isOTPVerified) {
-                // Update step description
-                document.getElementById('step-description').innerText = 'OTP Verified. Enter your password.';
+        //     if (isOTPVerified) {
+        //         // Update step description
+        //         document.getElementById('step-description').innerText = 'OTP Verified. Enter your password.';
 
-                // Hide OTP form and show Password form
-                document.getElementById('otp-form').style.display = 'none';
-                document.getElementById('password-form').style.display = 'block';
-            } else {
-                // Handle case where OTP is not verified
-                alert('Invalid OTP. Please try again.');
-            }
-        }
-    </script>
+        //         // Hide OTP form and show Password form
+        //         document.getElementById('otp-form').style.display = 'none';
+        //         document.getElementById('password-form').style.display = 'block';
+        //     } else {
+        //         // Handle case where OTP is not verified
+        //         alert('Invalid OTP. Please try again.');
+        //     }
+        // }
+    </script> -->
 </body>
 
 </html>
