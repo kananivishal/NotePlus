@@ -94,10 +94,6 @@ include "../includes/sidebar.php";
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" id="email" placeholder="Email" disabled>
                         </div>
-                        <div class="form-group col-md-12">
-                            <label for="add1">Address :</label>
-                            <input type="text" class="form-control" id="address" placeholder="Address " disabled>
-                        </div>
                         <div class="form-group col-md-6">
                             <label for="add2">Marital Status</label>
                             <input type="text" class="form-control" id="merital" placeholder="Marital Status" disabled>
@@ -106,16 +102,16 @@ include "../includes/sidebar.php";
                             <label for="add2">Age</label>
                             <input type="text" class="form-control" id="age" placeholder="Age" disabled>
                         </div>
-                        <div class="form-group col-md-12">
-                            <label for="cname">Company Name:</label>
-                            <input type="text" class="form-control" id="cname" placeholder="Company Name" disabled>
-                        </div>
                         <div class="form-group col-sm-6">
                             <label>Country:</label>
                             <input type="text" class="form-control" id="country" placeholder="Country" disabled>
-
+                            
                         </div>
-
+                        <div class="form-group col-md-12">
+                            <label for="state">State:</label>
+                            <input type="text" class="form-control" id="state" placeholder="State" disabled>
+                        </div>
+                        
                         <!-- <div class="form-group col-md-6">
                             <label for="pno">Pin Code:</label>
                             <input type="text" class="form-control" id="pno" placeholder="Pin Code">
@@ -124,6 +120,10 @@ include "../includes/sidebar.php";
                             <label for="city">Town/City:</label>
                             <input type="text" class="form-control" id="city" placeholder="Town/City" disabled>
                         </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="add1">Address :</label>
+                        <input type="text" class="form-control" id="address" placeholder="Address " disabled>
                     </div>
                     <!-- <hr>
                     <h5 class="mb-3">Security</h5>

@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
 
+<?php
+if (!isset($_COOKIE['TOKEN'])) {
+    echo "<script>window.location.href = '/noteplus/pages/login.php';</script>";
+    return;
+}
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +20,8 @@
     <link rel="stylesheet" href="/noteplus/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/remixicon/fonts/remixicon.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/@icon/dripicons/dripicons.css">
-    <script href = "/noteplus/js/init.js">
+
+    <script src="/noteplus/js/init.js"></script>
 </head>
 
 <body class="noteplus-layout  ">
