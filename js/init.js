@@ -6,25 +6,32 @@ const API_BASE_URL = `http://${API_HOST}:${API_PORT}/noteplus-api`;
 async function ajaxRequest(path, type = "GET", data = "", sendToken = true) {
   let url = API_BASE_URL + path;
 
-  let token = localStorage.getItem("TOKEN");
   let requestInit = "";
   let headers = {
     "Content-Type": "application/json",
   };
-
-  if (sendToken) headers["Authorization"] = `Bearer ${token}`;
+  
+  if (sendToken)
+  {
+    let token = getCookie("TOKEN");
+    headers["Authorization"] = `Bearer ${token}`;
+  }
 
   if (type == "GET")
+  {
     requestInit = {
       method: type,
       headers: headers,
     };
+  }
   else
+  {
     requestInit = {
       method: type,
       headers: headers,
       body: JSON.stringify(data),
     };
+  }
 
   let result = await fetch(url, requestInit);
 
@@ -39,4 +46,17 @@ async function ajaxRequest(path, type = "GET", data = "", sendToken = true) {
   } catch (error) {}
 
   return [result.status, response];
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name, value, expTimeInDay) {
+  const correntDate = new Date();
+  correntDate.setTime(correntDate.getTime() + (expTimeInDay * 24 * 60 * 60 * 1000));
+  let expires = "expires="+ correntDate.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }

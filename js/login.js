@@ -20,6 +20,7 @@ async function login(event) {
     let error = createErrorMessage(response.error);
     document.getElementById('message').innerHTML = error;
   } else {
+    setCookie("TOKEN", response.token, 15);
     setTimeout(() => (window.location.href = "/noteplus/"), 500);
   }
 }
