@@ -799,9 +799,12 @@
                     <div class="card-body write-card">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="iq-note-callapse-menu">
-                                <button type="button" class="mt-2 btn btn-primary show-note-button" data-toggle="collapse" href="#collapseMenu" data-extra-toggle="toggle" data-extra-class-show=".hide-note-button" data-extra-class-hide=".show-note-button" aria-expanded="false">
-                                    <i class="las la-pencil-alt pr-2"></i>Add Notes</button>
-                                <span class="hide-note-button d-none"><i class="las la-folder pr-2"></i>New Note</span>
+                                <button type="button" class="mt-2 mr-2 btn btn-primary show-note-button" data-toggle="collapse" href="#collapseMenu" data-extra-toggle="toggle" data-extra-class-show=".hide-note-button" data-extra-class-hide=".show-note-button" aria-expanded="false">
+                                    <i class="las la-pencil-alt pr-2"></i>Create Notes</button>
+                                <span class="hide-note-button d-none mr-3"><i class="las la-pencil-alt pr-2"></i>New Note</span>
+                                <button type="button" class="mt-2 btn btn-primary show-folder-button" data-toggle="collapse" href="#" data-extra-toggle="toggle" data-extra-class-show=".hide-folder-button" data-extra-class-hide=".show-folder-button" aria-expanded="false">
+                                    <i class="las la-folder pr-2"></i>Create Notebooks</button>
+                                <span class="hide-folder-button d-none"><i class="las la-folder pr-2"></i>New Notebooks</span>
                             </div>
                             <div class="note-right media align-items-top hide-note-button d-none">
                                 <div class="mr-2"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
@@ -965,6 +968,22 @@
                                 <div class="container-fluid collapse-fluid">
                                     <div class="row">
                                         <div class="col-md-12 col-lg-12 p-0">
+                                            <div class="row align-items-center">
+                                                <div class="form-group col-sm-6">
+                                                    <label for="altconno">Title</label>
+                                                    <input type="text" class="form-control" id="title" placeholder="Enter Your Title">
+                                                </div>
+                                                <div class="form-group col-lg-6">
+                                                    <label>Select Folder</label>
+                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option selected="">Select</option>
+                                                        <option>Married</option>
+                                                        <option>Widowed</option>
+                                                        <option>Divorced</option>
+                                                        <option>Separated </option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <div class="card card-transparent card-block card-stretch event-note">
                                                 <div class="card-body px-0 bukmark">
                                                     <div class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">
@@ -973,7 +992,10 @@
                                                         <div class="iq-full-screen"><a href="#" class="" id="btnFullscreen"><i class="las la-expand-arrows-alt font-size-18"></i></a></div>
                                                     </div>
                                                     <div id="quill-toolbar">
-                                                        <h1 class="mb-3">Birthday Bash</h1>
+                                                        <!-- <textarea id="quill-toolbar" class="col-md-12">
+
+                                                        </textarea> -->
+                                                        <!-- <h1 class="mb-3">Birthday Bash</h1>
                                                         <p>Hosting friend's birthday party and purchasing items.</p>
                                                         <ul>
                                                             <li>Cake</li>
@@ -981,7 +1003,7 @@
                                                             <li>Cold Drinks</li>
                                                         </ul>
                                                         <img src="/noteplus/assets/images/event-note/01.png" class="img-fluid image-1" alt="image">
-                                                        <img src="/noteplus/assets/images/event-note/02.png" class="img-fluid image-2" alt="image">
+                                                        <img src="/noteplus/assets/images/event-note/02.png" class="img-fluid image-2" alt="image"> -->
                                                     </div>
                                                 </div>
                                             </div>

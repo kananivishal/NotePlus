@@ -1,7 +1,6 @@
 async function getProfile() {
-  const token = getCookie("TOKEN");
-  console.log("token")
-  const [status, response] = await ajaxRequest("/profile/get.php", "GET");
+  const [status, response] = await ajaxRequest(path = "/profile/get.php");
+  console.log(response);
 
   if (status == 200) {
     console.log("Profile data fetched successfully:", response);

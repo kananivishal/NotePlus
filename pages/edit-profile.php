@@ -57,7 +57,7 @@ include "../includes/sidebar.php";
                                     </div>
                                 </div>
                             </div>
-                            <div class=" row align-items-center">
+                            <div class="row align-items-center">
                                 <div class="form-group col-sm-6">
                                     <label for="fname">First Name:</label>
                                     <input type="text" class="form-control" id="fname" value="Bud">
