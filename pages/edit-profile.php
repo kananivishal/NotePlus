@@ -148,21 +148,21 @@ include "../includes/sidebar.php";
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form id="change-password">
                             <div class="form-group">
                                 <label for="cpass">Current Password:</label>
-                                <a href="javascripe:void();" class="float-right">Forgot Password</a>
-                                <input type="Password" class="form-control" id="cpass" value="">
+                                <a class="float-right">Forgot Password</a>
+                                <input type="Password" class="form-control" id="confirmpassword" value="">
                             </div>
                             <div class="form-group">
                                 <label for="npass">New Password:</label>
-                                <input type="Password" class="form-control" id="npass" value="">
+                                <input type="Password" class="form-control" id="newpassword" value="">
                             </div>
                             <div class="form-group">
                                 <label for="vpass">Verify Password:</label>
-                                <input type="Password" class="form-control" id="vpass" value="">
+                                <input type="Password" class="form-control" id="verifypassword" value="">
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button type="button" class="btn btn-primary mr-2" onclick="changePassword()">Submit</button>
                             <button type="reset" class="btn iq-bg-danger">Cancel</button>
                         </form>
                     </div>

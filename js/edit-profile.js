@@ -51,12 +51,38 @@ async function editProfile(event) {
   }
 }
 
+async function changePassword(event) {
+  event?.preventDefault();
+
+  const UserData = {
+    oldPassword: $("#confirmpassword").val(),
+    newPassword: $("#newpassword").val(),
+    confirmNewPassword: $("#verifypassword").val(),
+  };
+
+  const [status, response] = await ajaxRequest(
+    "/profile/forgot-password.php",
+    "POST",
+    UserData,
+    true
+  );
+
+  if (status !== 200) {
+    let error = createErrorMessage(response.error);
+    document.getElementById("message").innerHTML = error;
+  } else {
+    window.location.href = "/noteplus/pages/profile.php";
+  }
+}
+
 function createErrorMessage(message) {
   return `<strong>Error:</strong> ${message}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const editprofile = document.getElementById("edit-profile");
+  const changepassword = document.getElementById("change-password");
 
   editprofile.addEventListener("submit", editProfile);
+  changepassword.addEventListener("submit",changePassword);
 });
