@@ -54,9 +54,9 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-function setCookie(name, value, expTimeInDay) {
-  const correntDate = new Date();
-  correntDate.setTime(correntDate.getTime() + (expTimeInDay * 24 * 60 * 60 * 1000));
-  let expires = "expires="+ correntDate.toUTCString();
+function setCookie(name, value, expTimeInDays) {
+  const currentDate = new Date();
+  currentDate.setTime(currentDate.getTime() + (expTimeInDays * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + currentDate.toUTCString();
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }

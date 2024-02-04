@@ -1,8 +1,5 @@
-// login.js
 async function login(event) {
   event?.preventDefault();
-
-  // document.getElementById('login').setAttribute('disabled', 'disabled');
 
   const UserData = {
     email: $('#email').val(),
