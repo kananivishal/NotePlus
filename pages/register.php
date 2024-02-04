@@ -36,19 +36,20 @@
                             </div>
 
                             <h3 class="mb-2">Sign Up</h3>
-                            <p id="step-description">Enter your email.</p>
                             <!-- Email Form -->
                             <form id="email-form">
+                                <p id="step-description">Enter your email.</p>
                                 <div class="col-lg-12">
                                     <div class="floating-label form-group">
                                         <input class="floating-input form-control" type="email" placeholder="" id="email">
                                         <label>Email</label>
                                     </div>
                                 </div>
+                                <!-- <button type="button" class="btn btn-primary mr-2" onclick="goBack('email-form')">Back</button> -->
                                 <button type="button" id="btnemail" class="btn btn-primary" onclick="sendOTP()">Next</button>
                                 <p class="mt-3 mb-0">Already have an Account <a href="/noteplus/pages/login.php" class="text-primary"><b>Sign In</b></a></p>
                             </form>
-                            <!-- OTP Form -->
+                            <!-- OTP Form -->   
                             <form id="otp-form" style="display:none;">
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -58,6 +59,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-primary mr-2" onclick="goBack('otp-form')">Back</button>
                                 <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
@@ -78,6 +80,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-primary mr-2" onclick="goBack('password-form')">Back</button>
                                 <button type="button" id="btnsignup" class="btn btn-primary" onclick="submitPassword()">Submit</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
@@ -102,42 +105,21 @@
     <script src="/noteplus/assets/js/slider.js"></script>
     <script src="/noteplus/assets/js/app.js"></script>
 
-    <!-- <script>
-        // function nextStep(currentFormId, nextFormId) {
-        //     // Validate current form data if needed
-        //     var isValid = true; // Add your validation logic
+    <script>
+    function goBack(formId) {
+        document.getElementById(formId).style.display = "none";
+        document.getElementById('email-form').style.display = "none";
+        document.getElementById('otp-form').style.display = "none";
+        document.getElementById('password-form').style.display = "none";
 
-        //     if (isValid) {
-        //         // Hide current form and show next form
-        //         document.getElementById(currentFormId).style.display = 'none';
-        //         document.getElementById(nextFormId).style.display = 'block';
+        if (formId === 'otp-form') {
+            document.getElementById('email-form').style.display = "block";
+        } else if (formId === 'password-form') {
+            document.getElementById('otp-form').style.display = "block";
+        }
+    }
+</script>
 
-        //         // Update step description
-        //         if (nextFormId === 'otp-form') {
-        //             document.getElementById('step-description').innerText = 'Enter the OTP sent to your email.';
-        //         } else if (nextFormId === 'password-form') {
-        //             document.getElementById('step-description').innerText = 'Create your account by setting a password.';
-        //         }
-        //     }
-        // }
-
-        // function verifyOTP() {
-        //     // Add your logic to verify the OTP
-        //     var isOTPVerified = true; // Change this to actual verification logic
-
-        //     if (isOTPVerified) {
-        //         // Update step description
-        //         document.getElementById('step-description').innerText = 'OTP Verified. Enter your password.';
-
-        //         // Hide OTP form and show Password form
-        //         document.getElementById('otp-form').style.display = 'none';
-        //         document.getElementById('password-form').style.display = 'block';
-        //     } else {
-        //         // Handle case where OTP is not verified
-        //         alert('Invalid OTP. Please try again.');
-        //     }
-        // }
-    </script> -->
 </body>
 
 </html>

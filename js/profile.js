@@ -1,9 +1,6 @@
 async function getProfile() {
   const [status, response] = await ajaxRequest(path = "/profile/get.php");
-  console.log(response);
-
   if (status == 200) {
-    console.log("Profile data fetched successfully:", response);
 
     document.getElementById("name").value = response.Name;
     document.getElementById("dob").value = response.DateOfBirth;

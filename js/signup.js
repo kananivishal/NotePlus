@@ -1,4 +1,5 @@
 let isSubmitting = false;
+let userEmail;
 
 async function sendOTP() {
   if (isSubmitting) {
@@ -25,6 +26,7 @@ async function sendOTP() {
       document.getElementById("message").innerHTML = error;
     } else {
       console.log("OTP Sent Successfully");
+      userEmail = email;
       document.getElementById("email-form").style.display = "none";
       document.getElementById("otp-form").style.display = "block";
     }
@@ -41,9 +43,8 @@ async function verifyOTP() {
 
   isSubmitting = true;
 
-  const email = document.getElementById("email").value;
   const otp = document.getElementById("otp").value;
-  const userData = { email, otp };
+  const userData = { email: userEmail, otp };
 
   try {
     showSpinner("btnotp");
@@ -69,6 +70,42 @@ async function verifyOTP() {
   }
 }
 
+async function submitPassword() {
+  if (isSubmitting) {
+    return;
+  }
+  isSubmitting = true;
+
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+  const userData = {
+    Email: userEmail,
+    Password: password,
+    ConfirmPassword: confirmPassword
+  };
+  try {
+    showSpinner("btnsignup");
+
+    const [status, response] = await ajaxRequest(
+      "/auth/signup.php",
+      "POST",
+      userData,
+      false
+    );
+
+    if (status !== 200) {
+      let error = createErrorMessage(response.error);
+      document.getElementById("message").innerHTML = error;
+    } else {
+      console.log("Registration Succesfully");
+      location.href = "/noteplus/pages/login.php";
+    }
+  } finally {
+    hideSpinner("btnsignup");
+    isSubmitting = false;
+  }
+}
+
 function createErrorMessage(message) {
   return `<strong>Error:</strong> ${message}`;
 }
@@ -80,6 +117,10 @@ function showSpinner(buttonId) {
   button.disabled = true;
 }
 
+function hideForm(formId) {
+  document.getElementById(formId).style.display = "none";
+}
+
 function hideSpinner(buttonId) {
   const button = document.getElementById(buttonId);
   button.innerHTML = "Next";
@@ -89,7 +130,9 @@ function hideSpinner(buttonId) {
 document.addEventListener("DOMContentLoaded", function () {
   const emailForm = document.getElementById("email-form");
   const otpForm = document.getElementById("otp-form");
+  const passwordForm = document.getElementById("password-form");
 
   document.getElementById("btnemail").addEventListener("click", sendOTP);
   document.getElementById("btnotp").addEventListener("click", verifyOTP);
+  document.getElementById("btnsignup").addEventListener("click", submitPassword);
 });
