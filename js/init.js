@@ -58,5 +58,5 @@ function setCookie(name, value, expTimeInDays) {
   const currentDate = new Date();
   currentDate.setTime(currentDate.getTime() + (expTimeInDays * 24 * 60 * 60 * 1000));
   let expires = "expires=" + currentDate.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=None;secure";
 }
