@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>NotePlus | Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>NotePlus</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/noteplus/assets/images/favicon.ico" />
     <link rel="stylesheet" href="/noteplus/assets/css/backend-plugin.min.css?v=1.0.0">
@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/noteplus/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/remixicon/fonts/remixicon.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/@icon/dripicons/dripicons.css">
+
+    <script src="/noteplus/js/init.js"></script>
 </head>
 
 <body class="">
@@ -36,47 +38,53 @@
                             </div>
 
                             <h3 class="mb-2">Reset Password</h3>
-                            <p id="step-description">Enter your email address and we'll send you an email with instructions to reset your password.</p>
                             <!-- Email Form -->
-                            <form id="email-form">
+                            <form id="reset-email">
+                                <p id="step-description">Enter your email.</p>
                                 <div class="col-lg-12">
                                     <div class="floating-label form-group">
                                         <input class="floating-input form-control" type="email" placeholder="" id="email">
                                         <label>Email</label>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="nextStep('email-form', 'otp-form')">Reset</button>
+                                <button type="button" id="btnresetemail" class="btn btn-primary" onclick="resetEmail()">Next</button>
                             </form>
-
-                            <!-- OTP Form -->
+                            <!-- OTP Form -->   
                             <form id="otp-form" style="display:none;">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="floating-label form-group">
-                                            <input class="floating-input form-control" type="number" placeholder="" id="otp" disabled>
+                                            <input class="floating-input form-control" type="number" placeholder="" id="otp">
                                             <label>OTP</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary">Verify OTP</button>
+                                <button type="button" class="btn btn-primary mr-2" onclick="goBack('otp-form')">Back</button>
+                                <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
                                 <p class="mt-3 mb-0"></p>
-                                <p id="step-description">Enter your new password.</p>
+                            </form>
+                            <!-- Password Form -->
+                            <form id="reset-password" style="display:none;">
+                                <p id="step-description">Enter your password.</p>
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="floating-label form-group">
-                                            <input class="floating-input form-control" type="password" placeholder="" disabled>
+                                            <input class="floating-input form-control" type="password" placeholder="" id="password">
                                             <label>Password</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="floating-label form-group">
-                                            <input class="floating-input form-control" type="password" placeholder="" disabled>
+                                            <input class="floating-input form-control" type="password" placeholder="" id="confirmPassword">
                                             <label>Confirm Password</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-primary mr-2" onclick="goBack('reset-password')">Back</button>
+                                <button type="button" id="btnresetpassword" class="btn btn-primary" onclick="resetPassword()">Submit</button>
+                                <p class="mt-3 mb-0"></p>
                             </form>
+                            <div id="message">Error</div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +92,8 @@
         </section>
     </div>
 
-    <!-- Your existing script tags -->
+    <script src="/noteplus/js/resetpassword.js"></script>
+
     <script src="/noteplus/assets/js/backend-bundle.min.js"></script>
     <script src="/noteplus/assets/js/flex-tree.min.js"></script>
     <script src="/noteplus/assets/js/tree.js"></script>
@@ -95,41 +104,19 @@
     <script src="/noteplus/assets/js/app.js"></script>
 
     <script>
-        function nextStep(currentFormId, nextFormId) {
-            // Validate current form data if needed
-            var isValid = true; // Add your validation logic
+    function goBack(formId) {
+        document.getElementById(formId).style.display = "none";
+        document.getElementById('email-form').style.display = "none";
+        document.getElementById('otp-form').style.display = "none";
+        document.getElementById('password-form').style.display = "none";
 
-            if (isValid) {
-                // Hide current form and show next form
-                document.getElementById(currentFormId).style.display = 'none';
-                document.getElementById(nextFormId).style.display = 'block';
-
-                // Update step description
-                if (nextFormId === 'otp-form') {
-                    document.getElementById('step-description').innerText = 'Enter the OTP sent to your email.';
-                } else if (nextFormId === 'password-form') {
-                    document.getElementById('step-description').innerText = 'Create your account by setting a password.';
-                }
-            }
+        if (formId === 'otp-form') {
+            document.getElementById('email-form').style.display = "block";
+        } else if (formId === 'password-form') {
+            document.getElementById('otp-form').style.display = "block";
         }
-
-        function verifyOTP() {
-            // Add your logic to verify the OTP
-            var isOTPVerified = true; // Change this to actual verification logic
-
-            if (isOTPVerified) {
-                // Update step description
-                document.getElementById('step-description').innerText = 'OTP Verified. Enter your password.';
-
-                // Hide OTP form and show Password form
-                document.getElementById('otp-form').style.display = 'none';
-                document.getElementById('password-form').style.display = 'block';
-            } else {
-                // Handle case where OTP is not verified
-                alert('Invalid OTP. Please try again.');
-            }
-        }
-    </script>
+    }
+</script>
 </body>
 
 </html>

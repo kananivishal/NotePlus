@@ -151,7 +151,7 @@ include "../includes/sidebar.php";
                         <form id="change-password">
                             <div class="form-group">
                                 <label for="cpass">Current Password:</label>
-                                <a class="float-right">Forgot Password</a>
+                                <a class="float-right" href="/noteplus/pages/forgot-password.php" >Forgot Password</a>
                                 <input type="Password" class="form-control" id="confirmpassword" value="">
                             </div>
                             <div class="form-group">
