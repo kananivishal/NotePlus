@@ -266,7 +266,8 @@
                             <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
                         </a>
                         <ul id="notebooks" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li class="">
+
+                            <!-- <li class="">
                                 <a href="/noteplus/backend/page-project-plans.html" class="svg-icon">
                                     <i>
                                         <svg width="20" class="svg-icon" id="iq-main-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -275,8 +276,8 @@
                                     </i>
                                     <span>Project Plans</span>
                                 </a>
-                            </li>
-                            <li class="">
+                            </li> -->
+                            <!-- <li class="">
                                 <a href="/noteplus/backend/page-routinenotes.html" class="svg-icon">
                                     <i>
                                         <svg width="20" class="svg-icon" id="iq-main-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -295,7 +296,7 @@
                                     </i>
                                     <span>Planning</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <!-- <li class="">
@@ -802,9 +803,8 @@
                                 <button type="button" class="mt-2 mr-2 btn btn-primary show-note-button" data-toggle="collapse" href="#collapseMenu" data-extra-toggle="toggle" data-extra-class-show=".hide-note-button" data-extra-class-hide=".show-note-button" aria-expanded="false">
                                     <i class="las la-pencil-alt pr-2"></i>Create Notes</button>
                                 <span class="hide-note-button d-none mr-3"><i class="las la-pencil-alt pr-2"></i>New Note</span>
-                                <button type="button" class="mt-2 btn btn-primary show-folder-button" data-toggle="collapse" href="#" data-extra-toggle="toggle" data-extra-class-show=".hide-folder-button" data-extra-class-hide=".show-folder-button" aria-expanded="false">
+                                <button type="button" class="mt-2 btn btn-primary show-folder-button" data-toggle="modal" href="#" data-target="#add-folder">
                                     <i class="las la-folder pr-2"></i>Create Notebooks</button>
-                                <span class="hide-folder-button d-none"><i class="las la-folder pr-2"></i>New Notebooks</span>
                             </div>
                             <div class="note-right media align-items-top hide-note-button d-none">
                                 <div class="mr-2"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
@@ -825,6 +825,65 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Add Folder Modal -->
+                <div class="modal fade" id="add-folder" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="popup text-left">
+                                    <h4 class="mb-3">Folder</h4>
+                                    <div class="content create-workform bg-body">
+                                        <div class="pb-3">
+                                            <h5 class="mb-2">Folder Name</h5>
+                                            <input type="text" class="form-control" id="folderName" placeholder="Enter Folder Name">
+                                        </div>
+                                        <div class="col-lg-12 mt-4">
+                                            <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                                <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
+                                                <div class="btn btn-outline-primary" data-dismiss="modal" onclick="addFolder(event)">Create</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Modal -->
+                <div class="modal fade" id="share-note" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="popup text-left">
+                                    <h4 class="mb-3">Share</h4>
+                                    <div class="content create-workform bg-body">
+                                        <form id="add-email">
+                                            <div class="pb-3">
+                                                <h5 class="mb-2">Invite Someone</h5>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="emailInput" placeholder="Enter Name or Email">
+                                                    <div class="input-group-append">
+                                                        <button type="button" class="btn btn-info" onclick="addEmail(event)"><i class="ri-add-fill"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="displayEmails" class="mb-3" style="word-wrap: break-word;"></div>
+                                            <div class="col-lg-12 mt-4">
+                                                <div class="d-flex flex-wrap align-items-center justify-content-center">
+                                                    <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
+                                                    <div class="btn btn-outline-primary" data-dismiss="modal" onclick="collaboratorAdd()">Submit</div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- <div class="card topnav-right">
                     <div class="card-body card-content-right">
                         <ul class="list-inline m-0 p-0 d-flex align-items-center justify-content-around">
@@ -975,12 +1034,8 @@
                                                 </div>
                                                 <div class="form-group col-lg-6">
                                                     <label>Select Folder</label>
-                                                    <select class="form-control" id="exampleFormControlSelect1">
-                                                        <option selected="">Select</option>
-                                                        <option>Married</option>
-                                                        <option>Widowed</option>
-                                                        <option>Divorced</option>
-                                                        <option>Separated </option>
+                                                    <select class="form-control" id="selectfolder">
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -992,25 +1047,15 @@
                                                         <div class="iq-full-screen"><a href="#" class="" id="btnFullscreen"><i class="las la-expand-arrows-alt font-size-18"></i></a></div>
                                                     </div>
                                                     <div id="quill-toolbar">
-                                                        <!-- <textarea id="quill-toolbar" class="col-md-12">
-
-                                                        </textarea> -->
-                                                        <!-- <h1 class="mb-3">Birthday Bash</h1>
-                                                        <p>Hosting friend's birthday party and purchasing items.</p>
-                                                        <ul>
-                                                            <li>Cake</li>
-                                                            <li>Balloons</li>
-                                                            <li>Cold Drinks</li>
-                                                        </ul>
-                                                        <img src="/noteplus/assets/images/event-note/01.png" class="img-fluid image-1" alt="image">
-                                                        <img src="/noteplus/assets/images/event-note/02.png" class="img-fluid image-2" alt="image"> -->
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div id="message">Error:</div>
                                         <div class="col-lg-12 p-0 d-flex justify-content-end">
                                             <button class="btn btn-outline-primary" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button">Close</button>
-                                            <button class="btn btn-primary ml-2" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button">Save</button>
+                                            <button class="btn btn-primary ml-2" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button" onclick="noteAdd(event)">Save</button>
                                         </div>
                                     </div>
                                 </div>

@@ -168,7 +168,7 @@ include "../includes/sidebar.php";
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="emailandsms" role="tabpanel">
+            <!-- <div class="tab-pane fade" id="emailandsms" role="tabpanel">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="iq-header-title">
@@ -238,8 +238,8 @@ include "../includes/sidebar.php";
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="manage-contact" role="tabpanel">
+            </div> -->
+            <!-- <div class="tab-pane fade" id="manage-contact" role="tabpanel">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="iq-header-title">
@@ -265,7 +265,7 @@ include "../includes/sidebar.php";
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
