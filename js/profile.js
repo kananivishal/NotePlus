@@ -13,8 +13,6 @@ async function getProfile() {
     document.getElementById("country").value = response.Country;
     document.getElementById("state").value = response.State;
     document.getElementById("city").value = response.City;
-  } else if (status == 400) {
-    location.href = "/noteplus/pages/login";
   } else {
     console.error(response);
   }
