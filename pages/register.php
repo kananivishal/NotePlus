@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/noteplus/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/remixicon/fonts/remixicon.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/@icon/dripicons/dripicons.css">
+
+    <script src="/noteplus/js/init.js"></script>
+
 </head>
 
 <body class="">
@@ -93,7 +96,6 @@
     </div>
 
     <!-- Your existing script tags -->
-    <script src="/noteplus/js/init.js"></script>
     <script src="/noteplus/js/signup.js"></script>
 
     <script src="/noteplus/assets/js/backend-bundle.min.js"></script>

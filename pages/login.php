@@ -12,7 +12,10 @@
       <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
       <link rel="stylesheet" href="../assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
       <link rel="stylesheet" href="../assets/vendor/remixicon/fonts/remixicon.css">
-      <link rel="stylesheet" href="../assets/vendor/@icon/dripicons/dripicons.css">  </head>
+      <link rel="stylesheet" href="../assets/vendor/@icon/dripicons/dripicons.css">
+      
+      <script src="/noteplus/js/init.js"></script>
+   </head>
   <body class=" ">
     <!-- loader Start -->
     <div id="loading">
@@ -32,7 +35,7 @@
                      </div>      
                      <h3 class="mb-2">Sign In</h3>
                      <p>Login to stay connected.</p>
-                     <form onsubmit="login(event)">
+                     <form onsubmit="login(); return false;">
                         <div class="row">
                            <div class="col-lg-12">
                               <div class="floating-label form-group">
@@ -56,7 +59,7 @@
                               <a href="/noteplus/pages/forgot-password.php" class="text-primary float-right">Forgot Password?</a>
                            </div>
                         </div>
-                        <button type="submit" id="login" class="btn btn-primary">Sign In</button>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
                         <p class="mt-3 mb-0">
                            Create an Account <a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a>
                         </p>
@@ -70,10 +73,7 @@
       </div>
     
       <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-
-
     <script src="/noteplus/js/login.js"></script>
-    <script src="/noteplus/js/init.js"></script>
 
     <!-- Backend Bundle JavaScript -->
     <script src="../assets/js/backend-bundle.min.js"></script>

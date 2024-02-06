@@ -1,6 +1,4 @@
-async function login(event) {
-  event?.preventDefault();
-
+async function login() {
   const UserData = {
     email: $('#email').val(),
     password: $('#password').val()
@@ -25,11 +23,3 @@ async function login(event) {
 function createErrorMessage(message) {
   return `<strong>Error:</strong> ${message}`;
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const loginForm = document.querySelector("form");
-
-  loginForm.addEventListener("submit", login);
-});
-
-
