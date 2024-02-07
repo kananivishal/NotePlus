@@ -49,6 +49,10 @@
 <script src="/noteplus/js/collaborator.js"></script>
 <script src="/noteplus/js/notes.js"></script>
 <script src="/noteplus/js/folder.js"></script>
+<<<<<<< HEAD
+=======
+<script src="/noteplus/js/login.js"></script>
+>>>>>>> c832687bd4de12798b09b26c107250e5b6e0cd82
 
 </body>
 

@@ -23,9 +23,9 @@ async function sendOTP() {
 
     if (status !== 200) {
       let error = createErrorMessage(response.error);
-      document.getElementById("message").innerHTML = error;
+      document.getElementById("EmailError").innerHTML = error;
     } else {
-      console.log("OTP Sent Successfully");
+      // console.log("OTP Sent Successfully");
       userEmail = email;
       document.getElementById("email-form").style.display = "none";
       document.getElementById("otp-form").style.display = "block";
@@ -58,9 +58,9 @@ async function verifyOTP() {
 
     if (status !== 200) {
       let error = createErrorMessage(response.error);
-      document.getElementById("message").innerHTML = error;
+      document.getElementById("OtpError").innerHTML = error;
     } else {
-      console.log("OTP Verified Successfully");
+      // console.log("OTP Verified Successfully");
       document.getElementById("otp-form").style.display = "none";
       document.getElementById("password-form").style.display = "block";
     }
@@ -81,7 +81,7 @@ async function submitPassword() {
   const userData = {
     Email: userEmail,
     Password: password,
-    ConfirmPassword: confirmPassword
+    ConfirmPassword: confirmPassword,
   };
   try {
     showSpinner("btnsignup");
@@ -95,7 +95,7 @@ async function submitPassword() {
 
     if (status !== 200) {
       let error = createErrorMessage(response.error);
-      document.getElementById("message").innerHTML = error;
+      document.getElementById("PasswordError").innerHTML = error;
     } else {
       console.log("Registration Succesfully");
       location.href = "/noteplus/pages/login.php";
@@ -107,7 +107,14 @@ async function submitPassword() {
 }
 
 function createErrorMessage(message) {
-  return `<strong>Error:</strong> ${message}`;
+  return `<div class="alert  bg-danger" role="alert">
+            <div class="iq-alert-text text-left">
+              ${message}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>`;
 }
 
 function showSpinner(buttonId) {
@@ -134,5 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("btnemail").addEventListener("click", sendOTP);
   document.getElementById("btnotp").addEventListener("click", verifyOTP);
-  document.getElementById("btnsignup").addEventListener("click", submitPassword);
+  document
+    .getElementById("btnsignup")
+    .addEventListener("click", submitPassword);
 });

@@ -47,12 +47,13 @@
                                         <input class="floating-input form-control" type="email" placeholder="" id="email">
                                         <label>Email</label>
                                     </div>
+                                    <div id="EmailError"></div>
                                 </div>
                                 <!-- <button type="button" class="btn btn-primary mr-2" onclick="goBack('email-form')">Back</button> -->
                                 <button type="button" id="btnemail" class="btn btn-primary" onclick="sendOTP()">Next</button>
                                 <p class="mt-3 mb-0">Already have an Account <a href="/noteplus/pages/login.php" class="text-primary"><b>Sign In</b></a></p>
                             </form>
-                            <!-- OTP Form -->   
+                            <!-- OTP Form -->
                             <form id="otp-form" style="display:none;">
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -60,10 +61,12 @@
                                             <input class="floating-input form-control" type="number" placeholder="" id="otp">
                                             <label>OTP</label>
                                         </div>
+                                        <div id="OtpError"></div>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-primary mr-2" onclick="goBack('otp-form')">Back</button>
                                 <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
+                                <button type="button" id="btnotp" class="btn btn-primary" onclick="resendOTP()">Resend OTP</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
                             <!-- Password Form -->
@@ -81,13 +84,13 @@
                                             <input class="floating-input form-control" type="password" placeholder="" id="confirmPassword">
                                             <label>Confirm Password</label>
                                         </div>
+                                        <div id="PasswordError"></div>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-primary mr-2" onclick="goBack('password-form')">Back</button>
                                 <button type="button" id="btnsignup" class="btn btn-primary" onclick="submitPassword()">Submit</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
-                            <div id="message">Error</div>
                         </div>
                     </div>
                 </div>
@@ -108,19 +111,19 @@
     <script src="/noteplus/assets/js/app.js"></script>
 
     <script>
-    function goBack(formId) {
-        document.getElementById(formId).style.display = "none";
-        document.getElementById('email-form').style.display = "none";
-        document.getElementById('otp-form').style.display = "none";
-        document.getElementById('password-form').style.display = "none";
+        function goBack(formId) {
+            document.getElementById(formId).style.display = "none";
+            document.getElementById('email-form').style.display = "none";
+            document.getElementById('otp-form').style.display = "none";
+            document.getElementById('password-form').style.display = "none";
 
-        if (formId === 'otp-form') {
-            document.getElementById('email-form').style.display = "block";
-        } else if (formId === 'password-form') {
-            document.getElementById('otp-form').style.display = "block";
+            if (formId === 'otp-form') {
+                document.getElementById('email-form').style.display = "block";
+            } else if (formId === 'password-form') {
+                document.getElementById('otp-form').style.display = "block";
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
 

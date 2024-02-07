@@ -23,9 +23,9 @@ async function resetEmail() {
 
     if (status !== 200) {
       let error = createErrorMessage(response.error);
-      document.getElementById("message").innerHTML = error;
+      document.getElementById("EmailError").innerHTML = error;
     } else {
-      console.log("OTP Sent Successfully");
+      // console.log("OTP Sent Successfully");
       userEmail = email;
       document.getElementById("reset-email").style.display = "none";
       document.getElementById("otp-form").style.display = "block";
@@ -52,7 +52,7 @@ async function verifyOTP() {
 
     if (status !== 200) {
       let error = createErrorMessage(response.error);
-      document.getElementById("message").innerHTML = error;
+      document.getElementById("OtpError").innerHTML = error;
     } else {
       document.getElementById("otp-form").style.display = "none";
       document.getElementById("reset-password").style.display = "block";
@@ -72,11 +72,11 @@ async function resetPassword() {
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
-  if (password !== confirmPassword) {
-    let error = createErrorMessage("New passwords do not match");
-    document.getElementById("message").innerHTML = error;
-    return;
-  }
+  // if (password !== confirmPassword) {
+  //   let error = createErrorMessage("New passwords do not match");
+  //   document.getElementById("PasswordError").innerHTML = error;
+  //   return;
+  // }
 
   const userData = { password, confirmPassword, email: userEmail };
 
@@ -92,7 +92,7 @@ async function resetPassword() {
 
     if (status !== 200) {
       let error = createErrorMessage(response.error);
-      document.getElementById("message").innerHTML = error;
+      document.getElementById("PasswordError").innerHTML = error;
     } else {
       location.href = "/noteplus/pages/login.php";
     }
@@ -103,7 +103,14 @@ async function resetPassword() {
 }
 
 function createErrorMessage(message) {
-  return `<strong>Error:</strong> ${message}`;
+  return `<div class="alert  bg-danger" role="alert">
+            <div class="iq-alert-text text-left">
+              ${message}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>`;
 }
 
 function showSpinner(buttonId) {

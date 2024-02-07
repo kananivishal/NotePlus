@@ -227,10 +227,10 @@
                     <span>Privacy Settings</span>
                 </a> -->
                 <hr class="my-2">
-                <a class="dropdown-item" href="/noteplus/">
+                <button class="dropdown-item" onclick="logout(event)">
                     <i class="las la-sign-out-alt font-size-20 mr-1"></i>
                     <span>Logout</span>
-                </a>
+                </button>
             </div>
         </div>
         <div class="data-scrollbar" data-scroll="1">
