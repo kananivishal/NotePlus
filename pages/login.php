@@ -48,6 +48,7 @@
                                  <input class="floating-input form-control" type="password" id="password" placeholder=" ">
                                  <label>Password</label>
                               </div>
+                              <div id="message"></div>
                            </div>
                            <div class="col-lg-6">
                               <!-- <div class="custom-control custom-checkbox mb-3 text-left">
@@ -64,7 +65,6 @@
                            Create an Account <a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a>
                         </p>
                      </form>
-                     <div id="message"></div>
                   </div>
                </div>
             </div>
