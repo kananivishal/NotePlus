@@ -10,7 +10,7 @@ include "../NotePlus/includes/sidebar.php";
                 <div class="d-flex flex-wrap align-items-top justify-content-between">
                     <ul class="d-flex nav nav-pills text-center note-tab mb-3" id="note-pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link home active show" data-toggle="pill" data-init="note" href="#note1" role="tab" aria-selected="false">All</a>
+                            <a class="nav-link home active show" data-toggle="pill" data-init="note" href="#all" role="tab" aria-selected="false">All</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link home" data-toggle="pill" data-init="shared-note" href="#note2" role="tab" aria-selected="true">Shared Notes</a>
@@ -78,10 +78,10 @@ include "../NotePlus/includes/sidebar.php";
                     </div>
                 </div>
                 <div class="note-content tab-content">
-                    <div id="note1" class="tab-pane fade active show">
+                    <div id="all" class="tab-pane fade active show">
                         <div class="icon active animate__animated animate__fadeIn i-grid">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
+                            <div class="row" id="notes">
+                                <!-- <div class="col-lg-4 col-md-6" >
                                     <div class="card card-block card-stretch card-height card-bottom-border-info note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-info rounded">
@@ -118,8 +118,8 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
+                                </div> -->
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-purple note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-purple rounded">
@@ -159,8 +159,8 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
+                                </div> -->
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-warning note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-warning rounded">
@@ -202,8 +202,8 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
+                                </div> -->
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-danger note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-danger rounded">
@@ -254,8 +254,8 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
+                                </div> -->
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-primary note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-primary rounded">
@@ -308,8 +308,8 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
+                                </div> -->
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-success note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-success rounded">
@@ -349,9 +349,9 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-success note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
@@ -472,9 +472,9 @@ include "../NotePlus/includes/sidebar.php";
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="icon active animate__animated animate__fadeIn i-list">
+                        <!-- <div class="icon active animate__animated animate__fadeIn i-list">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
@@ -664,9 +664,9 @@ include "../NotePlus/includes/sidebar.php";
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                    <div id="note2" class="tab-pane fade">
+                    <!-- <div id="note2" class="tab-pane fade">
                         <div class="icon active animate__animated animate__fadeIn i-grid">
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
@@ -1882,12 +1882,77 @@ include "../NotePlus/includes/sidebar.php";
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- View Model -->
+<div class="modal fade" id="view-note" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="popup text-left">
+                    <div class="media align-items-top justify-content-between">
+                        <h3 class="mb-3" id="modal-title"></h3>
+                        <div class="btn-cancel p-0" data-dismiss="modal"><i class="las la-times"></i></div>
+                    </div>
+                    <!-- <div class="content create-workform">
+                        <p class="mb-4" id="modal-body"></p>
+                        <h4 class="mb-3">Shared</h4>
+                        <ul class="list-inline p-0 m-0">
+                            <li>
+                                <div class="media align-items-center cust-card mb-3">
+                                    <div class="">
+                                        <img class="avatar-50 rounded-small" src="../assets/images/user/01.jpg" alt="01">
+                                    </div>
+                                    <div class="media-body ml-3">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Anne Effit</h5>
+                                            <h6 class="mb-0">04 Hours Ago</h6>
+                                        </div>
+                                        <p class="mb-0">anneeffit@gmail.com</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="media align-items-center cust-card mb-3">
+                                    <div class="">
+                                        <img class="avatar-50 rounded-small" src="../assets/images/user/02.jpg" alt="01">
+                                    </div>
+                                    <div class="media-body ml-3">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Poall Molve</h5>
+                                            <h6 class="mb-0">04 Hours Ago</h6>
+                                        </div>
+                                        <p class="mb-0">poallmolve@gmail.com</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="media align-items-center cust-card">
+                                    <div class="">
+                                        <img class="avatar-50 rounded-small" src="../assets/images/user/03.jpg" alt="01">
+                                    </div>
+                                    <div class="media-body ml-3">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Mack Devid</h5>
+                                            <h6 class="mb-0">05 Jan 2021</h6>
+                                        </div>
+                                        <p class="mb-0">mackdevid@gmail.com</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 include "../NotePlus/includes/footer.php";
 ?>
