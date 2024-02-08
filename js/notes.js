@@ -37,7 +37,6 @@ async function noteAdd(event) {
     IsPinned: $("#isPinnedCheckbox").prop("checked"),
     IsFavorite: $("#isFavoriteCheckbox").prop("checked"),
   };
-  // console.log(Collaborators);
 
   const [status, response] = await ajaxRequest(
     (path = "/notes/add.php"),
@@ -94,7 +93,7 @@ async function showNotes() {
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4" style="">
                                     <a href="#" class="dropdown-item new-note1" data-toggle="modal" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
                                     <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a>
-                                    <a class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a>
+                                    <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -125,14 +124,12 @@ showNotes();
 async function viewNoteModel(event, noteIndex) {
   event?.preventDefault();
 
-  const note = cachedNotes[noteIndex]; // Get the note from the cached data
+  const note = cachedNotes[noteIndex];
 
-  // Populate the modal with the note data
   $("#view-note .modal-title").text(note.Title);
   $("#view-note .modal-body .note-body").text(note.Body);
   $("#view-note .modal-footer .note-update-time").text(note.UpdateOnDateTime);
 
-  // Show the modal
   $("#view-note").modal("show");
 }
 
@@ -162,35 +159,57 @@ async function selectfolder() {
 }
 selectfolder();
 
-async function noteAdd(event) {
+// async function noteAdd(event) {
+//   event?.preventDefault();
+
+//   const enteredEmails = collaboratorAdd();
+
+//   const UserData = {
+//     Title: $("#title").val(),
+//     Body: $("#quill-toolbar").html(),
+//     Collaborators: enteredEmails,
+//     SelectedFolder: $("#selectfolder").val(),
+//     IsPinned: $("#isPinnedCheckbox").prop("checked"),
+//     IsFavorite: $("#isFavoriteCheckbox").prop("checked")
+//   };
+//   // console.log(Collaborators);
+
+//   const [status, response] = await ajaxRequest(
+//     (path = "/notes/add.php"),
+//     (type = "POST"),
+//     UserData,
+//     true
+//   );
+
+//   if (status !== 200) {
+//     let error = createErrorMessage(response.error);
+//     document.getElementById("message").innerHTML = error;
+//     console.log(error);
+//   } else {
+//     console.log(response);
+//     window.location.href = "/noteplus/";
+//   }
+// }
+
+async function noteDelete(event, noteIndex) {
   event?.preventDefault();
 
-  const enteredEmails = collaboratorAdd();
-
-  const UserData = {
-    Title: $("#title").val(),
-    Body: $("#quill-toolbar").html(),
-    Collaborators: enteredEmails,
-    SelectedFolder: $("#selectfolder").val(),
-    IsPinned: $("#isPinnedCheckbox").prop("checked"),
-    IsFavorite: $("#isFavoriteCheckbox").prop("checked")
-  };
-  // console.log(Collaborators);
+  const note = cachedNotes[noteIndex];
+  const noteId = note.Id;
 
   const [status, response] = await ajaxRequest(
-    (path = "/notes/add.php"),
-    (type = "POST"),
-    UserData,
+    "/notes/delete.php",
+    "POST",
+    { id: noteId },
     true
   );
 
-  if (status !== 200) {
-    let error = createErrorMessage(response.error);
-    document.getElementById("message").innerHTML = error;
-    console.log(error);
-  } else {
-    console.log(response);
+  if (status === 200) {
     window.location.href = "/noteplus/";
+    showNotes();
+  } else {
+    let error = createErrorMessage(response.error);
+    console.log(error);
   }
 }
 

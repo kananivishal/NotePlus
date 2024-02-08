@@ -808,7 +808,7 @@
                             </div>
                             <div class="note-right media align-items-top hide-note-button d-none">
                                 <div class="mr-2"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
-                                <div class="view-btn btn-dropdown body-bg rounded">
+                                <!-- <div class="view-btn btn-dropdown body-bg rounded">
                                     <div class="dropdown">
                                         <span class="dropdown-toggle" id="dropdownMenuButton1" data-toggle="dropdown">
                                             <i class="ri-more-2-fill"></i>
@@ -817,10 +817,9 @@
                                             <a class="dropdown-item" href="#"><i class="lar la-heart mr-3"></i>Add
                                                 To Favourite</a>
                                             <a class="dropdown-item" href="#"><i class="las la-thumbtack mr-3"></i>Mark As Pin</a>
-                                            <!-- <a class="dropdown-item" href="#"><i class="las la-trash-alt mr-3"></i>Move to Trash</a> -->
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

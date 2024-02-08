@@ -16,10 +16,10 @@ include "../NotePlus/includes/sidebar.php";
                             <a class="nav-link home" data-toggle="pill" data-init="shared-note" href="#note2" role="tab" aria-selected="true">Shared Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link home" data-toggle="pill" data-init="pin-note" href="#note3" role="tab" aria-selected="false">Pin Notes</a>
+                            <a class="nav-link home" data-toggle="pill" data-init="pin-note" href="#pin" role="tab" aria-selected="false">Pin Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link home" data-toggle="pill" data-init="fav-note" href="#note4" role="tab" aria-selected="false">Favourite Notes</a>
+                            <a class="nav-link home" data-toggle="pill" data-init="fav-note" href="#favourite" role="tab" aria-selected="false">Favourite Notes</a>
                         </li>
                     </ul>
                     <div class="media align-items-top iq-grid">
@@ -1051,11 +1051,13 @@ include "../NotePlus/includes/sidebar.php";
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="note3" class="tab-pane fade">
+                    </div> -->
+
+
+                    <div id="pin" class="tab-pane fade">
                         <div class="icon active animate__animated animate__fadeIn i-grid">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
+                            <div class="row" id="ispinned">
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-purple note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-purple rounded">
@@ -1330,10 +1332,10 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="icon active animate__animated animate__fadeIn i-list">
+                        <!-- <div class="icon active animate__animated animate__fadeIn i-list">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
@@ -1468,12 +1470,12 @@ include "../NotePlus/includes/sidebar.php";
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                    <div id="note4" class="tab-pane fade">
+                    <div id="favourite" class="tab-pane fade">
                         <div class="icon active animate__animated animate__fadeIn i-grid">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
+                            <div class="row" id="isfavourite">
+                                <!-- <div class="col-lg-4 col-md-6">
                                     <div class="card card-block card-stretch card-height card-bottom-border-warning note-detail">
                                         <div class="card-header d-flex justify-content-between pb-1">
                                             <div class="icon iq-icon-box-2 icon-border-warning rounded">
@@ -1748,10 +1750,10 @@ include "../NotePlus/includes/sidebar.php";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="icon active animate__animated animate__fadeIn i-list">
+                        <!-- <div class="icon active animate__animated animate__fadeIn i-list">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
@@ -1881,8 +1883,8 @@ include "../NotePlus/includes/sidebar.php";
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> -->
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
