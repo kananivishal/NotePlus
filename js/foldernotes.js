@@ -12,7 +12,7 @@ async function showNotes() {
     true
   );
   if (status == 200) {
-    // cachedNotes = response;
+// cachedNotes = response;
     let rows = "";
     console.log(response);
     response.forEach((note, index) => {
@@ -33,8 +33,8 @@ async function showNotes() {
                                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4" style="">
                                       <a href="#" class="dropdown-item new-note1" data-toggle="modal" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
                                       <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a>
-                                      <a class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" href="#"><i class="las la-trash-alt mr-3"></i>Delete</a>
-                                  </div>
+                                      <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>
+                                      </div>
                               </div>
                           </div>
                       </div>

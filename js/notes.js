@@ -24,6 +24,19 @@ async function selectfolder() {
 }
 selectfolder();
 
+async function updateNoteStatusClientSide(noteId, isPinned, isFavorite) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const updatedNote = cachedNotes.find((note) => note.id === noteId);
+      if (updatedNote) {
+        updatedNote.isPinned = isPinned;
+        updatedNote.IsFavorite = isFavorite;
+        resolve({ status: 200, message: "Note status updated successfully" });
+      }
+    }, 500);
+  });
+}
+
 async function noteAdd(event) {
   event?.preventDefault();
 
@@ -35,12 +48,12 @@ async function noteAdd(event) {
     Collaborators: enteredEmails,
     SelectedFolder: $("#selectfolder").val(),
     IsPinned: $("#isPinnedCheckbox").prop("checked"),
-    IsFavorite: $("#isFavoriteCheckbox").prop("checked"),
+    IsFavourite: $("#isFavoriteCheckbox").prop("checked"),
   };
 
   const [status, response] = await ajaxRequest(
-    (path = "/notes/add.php"),
-    (type = "POST"),
+    "/notes/add.php",
+    "POST",
     UserData,
     true
   );
@@ -51,6 +64,15 @@ async function noteAdd(event) {
     console.log(error);
   } else {
     console.log(response);
+
+    const noteId = response.id;
+
+    await updateNoteStatusClientSide(
+      noteId,
+      $("#isPinnedCheckbox").prop("checked"),
+      $("#isFavoriteCheckbox").prop("checked")
+    );
+
     window.location.href = "/noteplus/";
   }
 }
@@ -91,7 +113,7 @@ async function showNotes() {
                                     <i class="ri-more-fill"></i>
                                 </span>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4" style="">
-                                    <a href="#" class="dropdown-item new-note1" data-toggle="modal" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
+                                    <a href="#" class="dropdown-item new-note1" data-toggle="modal" data-target="#view-note" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
                                     <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a>
                                     <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>
                                 </div>
@@ -117,7 +139,7 @@ async function showNotes() {
   } else {
     console.error(response);
   }
-  return response.id;
+  return;
 }
 showNotes();
 
@@ -125,12 +147,28 @@ async function viewNoteModel(event, noteIndex) {
   event?.preventDefault();
 
   const note = cachedNotes[noteIndex];
+  const noteId = note.Id;
 
-  $("#view-note .modal-title").text(note.Title);
-  $("#view-note .modal-body .note-body").text(note.Body);
-  $("#view-note .modal-footer .note-update-time").text(note.UpdateOnDateTime);
+  const [status, response] = await ajaxRequest(
+    "/notes/show-one.php",
+    "POST",
+    { NoteId: noteId },
+    true
+  );
 
-  $("#view-note").modal("show");
+  if (status == 200) {
+    document.getElementById("modal-title").innerHTML = response.title;
+    document.getElementById("modal-body").innerHTML = response.body;
+    let rows = "";
+    response.collabratorEmails.forEach((collaboratorEmail) => {
+      rows += `
+      <p class="mb-0">${collaboratorEmail}</p>
+      `;
+    });
+    $("#modal-collabrator").html(rows);
+  } else {
+    console.error(response);
+  }
 }
 
 function collaboratorAdd() {
@@ -158,38 +196,6 @@ async function selectfolder() {
   }
 }
 selectfolder();
-
-// async function noteAdd(event) {
-//   event?.preventDefault();
-
-//   const enteredEmails = collaboratorAdd();
-
-//   const UserData = {
-//     Title: $("#title").val(),
-//     Body: $("#quill-toolbar").html(),
-//     Collaborators: enteredEmails,
-//     SelectedFolder: $("#selectfolder").val(),
-//     IsPinned: $("#isPinnedCheckbox").prop("checked"),
-//     IsFavorite: $("#isFavoriteCheckbox").prop("checked")
-//   };
-//   // console.log(Collaborators);
-
-//   const [status, response] = await ajaxRequest(
-//     (path = "/notes/add.php"),
-//     (type = "POST"),
-//     UserData,
-//     true
-//   );
-
-//   if (status !== 200) {
-//     let error = createErrorMessage(response.error);
-//     document.getElementById("message").innerHTML = error;
-//     console.log(error);
-//   } else {
-//     console.log(response);
-//     window.location.href = "/noteplus/";
-//   }
-// }
 
 async function noteDelete(event, noteIndex) {
   event?.preventDefault();
