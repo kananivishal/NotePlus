@@ -807,19 +807,18 @@
                                     <i class="las la-folder pr-2"></i>Create Notebooks</button>
                             </div>
                             <div class="note-right media align-items-top hide-note-button d-none">
-                                <div class="mr-2"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
-                                <!-- <div class="view-btn btn-dropdown body-bg rounded">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle" id="dropdownMenuButton1" data-toggle="dropdown">
-                                            <i class="ri-more-2-fill"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
-                                            <a class="dropdown-item" href="#"><i class="lar la-heart mr-3"></i>Add
-                                                To Favourite</a>
-                                            <a class="dropdown-item" href="#"><i class="las la-thumbtack mr-3"></i>Mark As Pin</a>
-                                        </div>
+                                <div class="mr-3"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
+                                <div class="form-group m-lg-1">
+                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" id="isPinnedCheckbox" name="isPinnedCheckbox" class="custom-control-input" onchange="updateNoteStatus(noteId,$('#isFavoriteCheckbox').prop('checked'))">
+                                        <label class="custom-control-label" for="isPinnedCheckbox"> IsPinned </label>
                                     </div>
-                                </div> -->
+                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" id="isFavoriteCheckbox" name="isFavoriteCheckbox" class="custom-control-input" onchange="updateNoteStatus(noteId, $('#isPinnedCheckbox').prop('checked'))">
+                                        <label class="custom-control-label" for="isFavoriteCheckbox"> IsFavourite </label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -1046,7 +1045,7 @@
                                                         <div class="iq-full-screen"><a href="#" class="" id="btnFullscreen"><i class="las la-expand-arrows-alt font-size-18"></i></a></div>
                                                     </div>
                                                     <div id="quill-toolbar">
-                                                    
+
                                                     </div>
                                                 </div>
                                             </div>

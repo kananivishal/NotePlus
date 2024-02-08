@@ -3,14 +3,13 @@
 
 <?php
 if (!isset($_COOKIE['TOKEN'])) {
-    echo "<script>window.location.href = '/noteplus/pages/login.php';</script>";
-    return;
+    header("Location: /noteplus/pages/login");
 }
 ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>NotePlus | Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>NotePlus</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/noteplus/assets/images/favicon.ico" />
