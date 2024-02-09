@@ -205,7 +205,7 @@
             <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="/noteplus/assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user">
                 <div class="caption">
-                    <h6 class="mb-0 line-height">Bud Wiser</h6>
+                    <h6 class="mb-0 line-height">Profile</h6>
                 </div>
                 <i class="las la-angle-down"></i>
             </a>

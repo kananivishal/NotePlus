@@ -12,6 +12,7 @@ if (!isset($_COOKIE['TOKEN'])) {
     <title>NotePlus</title>
 
     <!-- Favicon -->
+    <link rel="stylesheet" href="/noteplus/assets/css/style.css">
     <link rel="shortcut icon" href="/noteplus/assets/images/favicon.ico" />
     <link rel="stylesheet" href="/noteplus/assets/css/backend-plugin.min.css?v=1.0.0">
     <link rel="stylesheet" href="/noteplus/assets/css/backend.css?v=1.0.0">

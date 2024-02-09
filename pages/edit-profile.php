@@ -1,6 +1,8 @@
 <?php
 include "../includes/header.php";
 include "../includes/sidebar.php";
+$db = mysqli_connect("localhost","root","","noteplus"); 
+$result =mysqli_query($db,"SELECT ImageName FROM userprofile");
 ?>
 <div class="col-lg-12">
     <div class="card">
@@ -49,7 +51,13 @@ include "../includes/sidebar.php";
                                 <div class="col-md-12">
                                     <div class="profile-img-edit">
                                         <div class="crm-profile-img-edit" id="imageName">
-                                            <img class="crm-profile-pic avatar-100" name="ImageName" id="profile-image" src="noteplus/assets/images/user/?" alt="profile-pic">
+                                            <?php
+                                            while($row = mysqli_fetch_array($result))
+                                            {
+
+                                                echo "<img class='crm-profile-pic avatar-100' src='/noteplus/assets/images/user/".$row['ImageName']."' name='ImageName' id='profile-image'  alt='profile-pic'>";
+                                            }
+                                            ?>
                                             <div class="crm-p-image bg-primary">
                                                 <i class="las la-pen upload-button" data-toggle="modal" data-target="#image"></i>
                                                 
@@ -133,10 +141,10 @@ include "../includes/sidebar.php";
                                        </textarea>
                                 </div>
                             </div>
+                            <div id="EditProfileError"></div>
                             <button type="button" class="btn btn-primary mr-2" onclick="editProfile()">Submit</button>
                             <button type="reset" class="btn iq-bg-danger">Cancel</button>
                         </form>
-                        <div id="message">Error</div>
                     </div>
                 </div>
             </div>
@@ -162,6 +170,7 @@ include "../includes/sidebar.php";
                                 <label for="vpass">Verify Password:</label>
                                 <input type="Password" class="form-control" id="verifypassword" value="">
                             </div>
+                            <div id="message" id=></div>
                             <button type="button" class="btn btn-primary mr-2" onclick="changePassword()">Submit</button>
                             <button type="reset" class="btn iq-bg-danger">Cancel</button>
                         </form>
