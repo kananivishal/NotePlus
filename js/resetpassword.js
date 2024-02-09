@@ -21,9 +21,13 @@ async function resetEmail() {
       false
     );
 
+    $("#EmailError").show();
     if (status !== 200) {
       let error = createErrorMessage(response.error);
       document.getElementById("EmailError").innerHTML = error;
+      setTimeout(function () {
+        $("#EmailError").fadeOut("slow");
+      }, 2000);
     } else {
       // console.log("OTP Sent Successfully");
       userEmail = email;
@@ -49,10 +53,13 @@ async function verifyOTP() {
       userData,
       false
     );
-
+    $("#OtpError").show();
     if (status !== 200) {
       let error = createErrorMessage(response.error);
       document.getElementById("OtpError").innerHTML = error;
+      setTimeout(function () {
+        $("#OtpError").fadeOut("slow");
+      }, 2000);
     } else {
       document.getElementById("otp-form").style.display = "none";
       document.getElementById("reset-password").style.display = "block";
@@ -90,9 +97,13 @@ async function resetPassword() {
       false
     );
 
+    $("#PasswordError").show();
     if (status !== 200) {
       let error = createErrorMessage(response.error);
       document.getElementById("PasswordError").innerHTML = error;
+      setTimeout(function () {
+        $("#PasswordError").fadeOut("slow");
+      }, 2000);
     } else {
       location.href = "/noteplus/pages/login.php";
     }

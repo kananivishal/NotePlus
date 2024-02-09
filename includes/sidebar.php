@@ -806,6 +806,7 @@
                                 <button type="button" class="mt-2 btn btn-primary show-folder-button" data-toggle="modal" href="#" data-target="#add-folder">
                                     <i class="las la-folder pr-2"></i>Create Notebooks</button>
                             </div>
+                            <div id="NotesError"></div>
                             <div class="note-right media align-items-top hide-note-button d-none">
                                 <div class="mr-3"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
                                 <div class="form-group m-lg-1">
@@ -836,10 +837,11 @@
                                             <h5 class="mb-2">Folder Name</h5>
                                             <input type="text" class="form-control" id="folderName" placeholder="Enter Folder Name">
                                         </div>
+                                        <div id="FolderError"></div>
                                         <div class="col-lg-12 mt-4">
                                             <div class="d-flex flex-wrap align-items-ceter justify-content-center">
                                                 <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
-                                                <div class="btn btn-outline-primary" data-dismiss="modal" onclick="addFolder(event)">Create</div>
+                                                <div class="btn btn-outline-primary" onclick="addFolder(event)">Create</div>
                                             </div>
                                         </div>
                                     </div>
@@ -869,6 +871,7 @@
                                             </div>
                                             <div id="displayEmails" class="mb-3" style="word-wrap: break-word;"></div>
                                             <div class="col-lg-12 mt-4">
+                                                <div id="CollaboratorError"></div>
                                                 <div class="d-flex flex-wrap align-items-center justify-content-center">
                                                     <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
                                                     <div class="btn btn-outline-primary" data-dismiss="modal" onclick="collaboratorAdd()">Submit</div>
@@ -1050,7 +1053,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="message">Error:</div>
                                         <div class="col-lg-12 p-0 d-flex justify-content-end">
                                             <button class="btn btn-outline-primary" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button">Close</button>
                                             <button class="btn btn-primary ml-2" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button" onclick="noteAdd(event)">Save</button>
@@ -1060,4 +1062,4 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>

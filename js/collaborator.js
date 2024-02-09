@@ -4,8 +4,13 @@ async function addEmail(event) {
   const emailInput = $("#emailInput");
   const newEmail = emailInput.val().trim();
 
+  $('#CollaboratorError').show();
+
   if (isEmailAlreadyAdded(newEmail)) {
-    console.log("Email is already added.");
+    // console.log("Email is already added.");
+    setTimeout(function() {
+      $('#CollaboratorError').fadeOut('slow');
+    }, 2000);
     return;
   }
 
@@ -20,17 +25,22 @@ async function addEmail(event) {
     true
   );
 
+  $('#CollaboratorError').show();
   if (status !== 200) {
     let error = createErrorMessage(response.error);
-    console.log(error);
+    $('#CollaboratorError').html(error).show(); // Show the error message
+    setTimeout(function() {
+      $('#CollaboratorError').fadeOut('slow');
+    }, 2000);
   } else {
     if (response.hasOwnProperty("Email")) {
       addValidatedEmail(response.Email);
     } else {
-      console.error("Email property not found in the response:", response);
+      console.log(response);
     }
   }
 }
+
 
 function addValidatedEmail(Email) {
   var displayEmails = document.getElementById("displayEmails");
@@ -77,7 +87,7 @@ async function showSharedNotes() {
     UserData,
     true
   );
-  console.log(response);
+  // console.log(response);
   if (
     status === 200 &&
     response.hasOwnProperty("sharedNotes") &&
@@ -134,12 +144,21 @@ async function showSharedNotes() {
     });
     $("#sharednotes").html(rows);
   } else {
-    console.log(response);
+    setTimeout(function() {
+      $('#CollaboratorError').fadeOut('slow');
+    }, 2000);
   }
   return response.id;
 }
 showSharedNotes();
 
 function createErrorMessage(message) {
-  return `<strong>Error:</strong> ${message}`;
+  return `<div class="alert  bg-danger" role="alert">
+            <div class="iq-alert-text text-left">
+              ${message}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>`;
 }

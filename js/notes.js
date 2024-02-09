@@ -6,7 +6,6 @@ function collaboratorAdd() {
       displayEmails.children[i].innerText.replace("Remove", "").trim()
     );
   }
-  console.log("Entered emails:", enteredEmails);
   return enteredEmails;
 }
 
@@ -58,13 +57,15 @@ async function noteAdd(event) {
     true
   );
 
+  $("#NotesError").show();
+
   if (status !== 200) {
     let error = createErrorMessage(response.error);
-    document.getElementById("message").innerHTML = error;
-    console.log(error);
+    document.getElementById("NotesError").innerHTML = error;
+    setTimeout(function () {
+      $("#NotesError").fadeOut("slow");
+    }, 2000);
   } else {
-    console.log(response);
-
     const noteId = response.id;
 
     await updateNoteStatusClientSide(
@@ -96,7 +97,6 @@ async function showNotes() {
   if (status == 200) {
     cachedNotes = response;
     let rows = "";
-    console.log(response);
     response.forEach((note, index) => {
       const pinnedIcon =
         note.IsPinned == 1
@@ -155,7 +155,6 @@ async function showNotes() {
     });
     $("#notes").html(rows);
   } else {
-    console.error(response);
   }
   return;
 }
@@ -189,17 +188,17 @@ async function viewNoteModel(event, noteIndex) {
   }
 }
 
-function collaboratorAdd() {
-  var displayEmails = document.getElementById("displayEmails");
-  var enteredEmails = [];
-  for (var i = 0; i < displayEmails.children.length; i++) {
-    enteredEmails.push(
-      displayEmails.children[i].innerText.replace("Remove", "").trim()
-    );
-  }
-  console.log("Entered emails:", enteredEmails);
-  return enteredEmails;
-}
+// function collaboratorAdd() {
+//   var displayEmails = document.getElementById("displayEmails");
+//   var enteredEmails = [];
+//   for (var i = 0; i < displayEmails.children.length; i++) {
+//     enteredEmails.push(
+//       displayEmails.children[i].innerText.replace("Remove", "").trim()
+//     );
+//   }
+//   console.log("Entered emails:", enteredEmails);
+//   return enteredEmails;
+// }
 
 async function selectfolder() {
   const [status, response] = await ajaxRequest("/folder/show.php");

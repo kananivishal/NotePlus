@@ -34,10 +34,13 @@ async function addFolder(event) {
     UserData,
     true
   );
+  $('#FolderError').show();
   if (status !== 200) {
     let error = createErrorMessage(response.error);
-    console.log(error);
-    // document.getElementById("message").innerHTML = error;
+    document.getElementById("FolderError").innerHTML = error;
+    setTimeout(function() {
+      $('#FolderError').fadeOut('slow');
+    }, 2000);
   } else {
     window.location.href = "/noteplus/";
   }

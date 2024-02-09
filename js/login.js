@@ -11,9 +11,13 @@ async function login() {
     false
   );
 
+  // $('#message').show();
   if (status !== 200) {
     let error = createErrorMessage(response.error);
     document.getElementById("message").innerHTML = error;
+    setTimeout(function() {
+      $('#message').fadeOut('slow');
+    }, 2000);
   } else {
     setCookie("TOKEN", response.token, 15);
     setTimeout(() => (window.location.href = "/noteplus/"), 500);

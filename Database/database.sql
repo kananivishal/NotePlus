@@ -22,9 +22,10 @@ CREATE TABLE `Users`
 CREATE TABLE `UserProfile`
 (
     `Id` INT PRIMARY KEY AUTO_INCREMENT,
-    `Name` VARCHAR(50) NOT NULL,
+    `UserId` INT NOT NULL,
+    `Name` VARCHAR(50) DEFAULT NULL,
     `Phonenumber` VARCHAR(10) DEFAULT NULL,
-    `DateOfBirth` VARCHAR(50) DEFAULT NULL,
+    `DateOfBirth` DATE DEFAULT NULL,
     `Gender` VARCHAR(10) DEFAULT NULL,
     `MaritalStatus` VARCHAR(50) DEFAULT NULL,
     `Age` VARCHAR(50) DEFAULT NULL,
@@ -34,13 +35,14 @@ CREATE TABLE `UserProfile`
     `Address` VARCHAR(300) DEFAULT NULL,
     `ImageName` VARCHAR(100) DEFAULT 'dummy.jpg',
 
-    `UserId` INT NOT NULL,
     CONSTRAINT `FkUserIdInUserProfile` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`)
 );
 
 CREATE TABLE `Folder`(
     `Id` INT PRIMARY KEY AUTO_INCREMENT,
-    `Name` VARCHAR(50) NOT NULL
+    `Name` VARCHAR(50) NOT NULL,
+    `UserId` INT NOT NULL,
+    CONSTRAINT `FkUserIdFolder` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`)
 );
 
 CREATE TABLE `Notes`
@@ -52,23 +54,20 @@ CREATE TABLE `Notes`
     `UpdateOnDateTime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     `IsPinned` BOOLEAN DEFAULT 0,
     `IsFavourite` BOOLEAN DEFAULT 0,
+    `FolderId` INT DEFAULT 0,
 
     `UserId` INT NOT NULL,
-    CONSTRAINT `FkUserIdInNotes` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`),
+    CONSTRAINT `FkUserIdInNotes` FOREIGN KEY (`UserId`) REFERENCES `Users`(`Id`)
 
-    `FolderId` INT NOT NULL,
-    CONSTRAINT `FkFolderId` FOREIGN KEY (`FolderId`) REFERENCES `Folder`(`Id`)
 );
 
 CREATE TABLE `Collaborator`
 (
     `Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `CollaboratorId` INT DEFAULT NULL,
 
     `OwnerId` INT NOT NULL,
     CONSTRAINT `FkOwnerIdInSharedNotes` FOREIGN KEY (`OwnerId`) REFERENCES `Users`(`Id`),
-
-    `CollaboratorId` INT NOT NULL,
-    CONSTRAINT `FkCollaboratorIdInSharedNotes` FOREIGN KEY (`CollaboratorId`) REFERENCES `Users`(`Id`),
 
     `NoteId` INT NOT NULL,
     CONSTRAINT `FkNoteIdInSharedNotes` FOREIGN KEY (`NoteId`) REFERENCES `Notes`(`Id`)
