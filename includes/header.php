@@ -20,6 +20,8 @@ if (!isset($_COOKIE['TOKEN'])) {
     <link rel="stylesheet" href="/noteplus/assets/vendor/remixicon/fonts/remixicon.css">
     <link rel="stylesheet" href="/noteplus/assets/vendor/@icon/dripicons/dripicons.css">
 
+    <link rel="stylesheet" href="/noteplus/assets/plugins/sweetalert/css/sweetalert.css">
+
     <script src="/noteplus/js/init.js"></script>
 </head>
 

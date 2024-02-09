@@ -45,7 +45,22 @@
 <!-- app JavaScript -->
 <script src="/noteplus/assets/js/app.js"></script>
 
-<script src="/noteplus/js/folder.js"></script>
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
+</script>
+
+
+
+<script src="/noteplus/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
+<script src="/noteplus/assets/plugins/sweetalert/js/sweetalert.init.js"></script>
+
+
 <script src="/noteplus/js/collaborator.js"></script>
 <script src="/noteplus/js/notes.js"></script>
 <script src="/noteplus/js/folder.js"></script>
@@ -53,6 +68,7 @@
 <script src="/noteplus/js/foldernotes.js"></script>
 <script src="/noteplus/js/pinned.js"></script>
 <script src="/noteplus/js/favourite.js"></script>
+<script src="/noteplus/js/edit-notes.js"></script>
 
 </body>
 
