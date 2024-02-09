@@ -12,14 +12,14 @@ async function getProfile() {
       document.getElementById("cname").value = response.City;
       document.getElementById("address").value = response.Address;
 
-      const imageName = response.ImageName;
-      if (imageName) {
-          const profileImage = `<img id="profile-image" class="crm-profile-pic avatar-100" src="../assets/images/user/${imageName}" alt="Profile Image">`;
-          document.getElementById("imageName").innerHTML = profileImage;
-      } else {
-          // Handle the case when no image is found
-          console.error("No profile image found");
-      }
+      const ImageName = response.ImageName; 
+const profileImage = 
+  ImageName 
+  ? `<img id="profile-image" name="img" class="crm-profile-pic avatar-100" src="../assets/images/user/${ImageName}" alt="Profile Image">`
+  : "";
+
+document.getElementById("profile-image-container").innerHTML = profileImage;
+
   } else if (status == 400) {
       location.href = "/noteplus/pages/login";
   } else {
@@ -80,10 +80,13 @@ async function editProfile(event) {
     UserData,
     true
   );
-
+  $('#EditProfileError').show();
   if (status !== 200) {
     let error = createErrorMessage(response.error);
-    document.getElementById("message").innerHTML = error;
+    document.getElementById("EditProfileError").innerHTML = error;
+    setTimeout(function() {
+      $('#EditProfileError').fadeOut('slow');
+    }, 3000);
   } else {
     window.location.href = "/noteplus/pages/profile.php";
   }
@@ -105,9 +108,13 @@ async function changePassword(event) {
     true
   );
 
+  $('#EditPasswordError').show();
   if (status !== 200) {
     let error = createErrorMessage(response.error);
-    document.getElementById("message").innerHTML = error;
+    document.getElementById("EditPasswordError").innerHTML = error;
+    setTimeout(function() {
+      $('#EditPasswordError').fadeOut('slow');
+    }, 3000);
   } else {
     window.location.href = "/noteplus/pages/profile.php";
   }

@@ -1,6 +1,8 @@
 <?php
 include "../includes/header.php";
 include "../includes/sidebar.php";
+$db = mysqli_connect("localhost","root","","noteplus"); 
+$result =mysqli_query($db,"SELECT ImageName FROM userprofile");
 ?>
 
 <div class="col-xl-3 col-lg-4">
@@ -15,7 +17,13 @@ include "../includes/sidebar.php";
                 <div class="form-group text-center">
                     <div class="d-flex justify-content-center">
                         <div class="crm-profile-img-edit">
-                            <img class="crm-profile-pic avatar-130" name="ImageName" id="profile-image" alt="profile-pic">
+                        <?php
+                                            while($row = mysqli_fetch_array($result))
+                                            {
+
+                                                echo "<img class='crm-profile-pic avatar-100' src='/noteplus/assets/images/user/".$row['ImageName']."' name='ImageName' id='profile-image'  alt='profile-pic'>";
+                                            }
+                                            ?>
                             <!-- <div class="crm-p-image bg-primary">
                                 <i class="las la-pen upload-button"></i>
                                 <input class="file-upload" type="file" accept="image/*">

@@ -13,7 +13,7 @@ async function getProfile() {
     document.getElementById("country").value = response.Country;
     document.getElementById("state").value = response.State;
     document.getElementById("city").value = response.City;
-    document.getElementById("ImageName").value = response.ImageName;
+    document.getElementById("imagename").value = response.ImageName;
   } else {
     console.error(response);
   }
