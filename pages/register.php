@@ -66,7 +66,7 @@
                                 </div>
                                 <button type="button" class="btn btn-primary mr-2" onclick="goBack('otp-form')">Back</button>
                                 <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
-                                <button type="button" id="btnotp" class="btn btn-primary" onclick="resendOTP()">Resend OTP</button>
+                                <button type="button" id="btnresendotp" class="btn btn-primary" onclick="resendOTP()">Resend OTP</button>
                                 <p class="mt-3 mb-0"></p>
                             </form>
                             <!-- Password Form -->
@@ -123,6 +123,17 @@
                 document.getElementById('otp-form').style.display = "block";
             }
         }
+    </script>
+
+
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+            null
+        };
     </script>
 
 </body>

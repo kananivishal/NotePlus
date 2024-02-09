@@ -3,12 +3,14 @@ include "../includes/header.php";
 include "../includes/sidebar.php";
 ?>
 <div class="col-lg-12">
-    <div class="card card-block card-stretch">
+<div class="card card-block card-stretch position-relative">
         <div class="card-body custom-notes-space">
+            <button type="button" class="btn btn-warning mt-2 float-right ml-2"><i class="ri-delete-bin-2-fill pr-0"></i></button>
+            <button type="button" class="btn btn-success mt-2 float-right"><i class="ri-pencil-fill pr-0"></i></button>
             <h3 class="">Your Notes</h3>
             <div class="iq-tab-content">
                 <div class="d-flex flex-wrap align-items-top justify-content-between mb-3">
-                
+
                     <!-- <div class="media align-items-top iq-grid">
                         <div class="view-btn rounded body-bg btn-dropdown filter-btn mr-3">
                             <div class="dropdown">
@@ -279,55 +281,74 @@ include "../includes/sidebar.php";
                         <h3 class="mb-3" id="modal-title"></h3>
                         <div class="btn-cancel p-0" data-dismiss="modal"><i class="las la-times"></i></div>
                     </div>
-                    <!-- <div class="content create-workform">
-                        <p class="mb-4" id="modal-body"></p>
+                    <div class="content create-workform">
+                        <p class="mb-4" id="modal-body" contenteditable="false"></p>
                         <h4 class="mb-3">Shared</h4>
                         <ul class="list-inline p-0 m-0">
                             <li>
                                 <div class="media align-items-center cust-card mb-3">
-                                    <div class="">
-                                        <img class="avatar-50 rounded-small" src="../assets/images/user/01.jpg" alt="01">
-                                    </div>
-                                    <div class="media-body ml-3">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <h5 class="mb-0">Anne Effit</h5>
-                                            <h6 class="mb-0">04 Hours Ago</h6>
-                                        </div>
-                                        <p class="mb-0">anneeffit@gmail.com</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media align-items-center cust-card mb-3">
-                                    <div class="">
-                                        <img class="avatar-50 rounded-small" src="../assets/images/user/02.jpg" alt="01">
-                                    </div>
-                                    <div class="media-body ml-3">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <h5 class="mb-0">Poall Molve</h5>
-                                            <h6 class="mb-0">04 Hours Ago</h6>
-                                        </div>
-                                        <p class="mb-0">poallmolve@gmail.com</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media align-items-center cust-card">
-                                    <div class="">
-                                        <img class="avatar-50 rounded-small" src="../assets/images/user/03.jpg" alt="01">
-                                    </div>
-                                    <div class="media-body ml-3">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <h5 class="mb-0">Mack Devid</h5>
-                                            <h6 class="mb-0">05 Jan 2021</h6>
-                                        </div>
-                                        <p class="mb-0">mackdevid@gmail.com</p>
+                                    <div class="media-body ml-3" id="modal-collabrator">
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                    </div> -->
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="edit-note" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Note</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row align-items-center">
+                    <div class="form-group col-sm-6">
+                        <label for="altconno">Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Enter Your Title">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Select Folder</label>
+                        <select class="form-control" id="selectfolder">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="card card-transparent card-block card-stretch event-note">
+                    <div class="card-body px-0 bukmark">
+                        <div class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">
+                            <div class="quill-tool">
+                            </div>
+                            <div class="iq-full-screen"><a href="#" class="" id="btnFullscreen"><i class="las la-expand-arrows-alt font-size-18"></i></a></div>
+                        </div>
+                        <div id="editor" id="quill-toolbar">
+                        </div>
+                    </div>
+                </div>
+                <form id="add-email">
+                    <div class="pb-3">
+                        <h5 class="mb-2">Invite Someone</h5>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="emailInput" placeholder="Enter Name or Email">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-info" onclick="addEmail(event)"><i class="ri-add-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="displayEmails" class="mb-3" style="word-wrap: break-word;"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
