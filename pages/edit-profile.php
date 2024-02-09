@@ -48,11 +48,11 @@ include "../includes/sidebar.php";
                             <div class="form-group row align-items-center">
                                 <div class="col-md-12">
                                     <div class="profile-img-edit">
-                                        <div class="crm-profile-img-edit">
-                                            <img class="crm-profile-pic avatar-100" src="../assets/images/user/1.jpg" alt="profile-pic">
+                                        <div class="crm-profile-img-edit" id="imageName">
+                                            <img class="crm-profile-pic avatar-100" name="ImageName" id="profile-image" src="noteplus/assets/images/user/?" alt="profile-pic">
                                             <div class="crm-p-image bg-primary">
-                                                <i class="las la-pen upload-button"></i>
-                                                <input class="file-upload" type="file" accept="image/*">
+                                                <i class="las la-pen upload-button" data-toggle="modal" data-target="#image"></i>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -266,6 +266,31 @@ include "../includes/sidebar.php";
                     </div>
                 </div>
             </div> -->
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="image" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Select Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="image-selection" id="image">
+                    <img class="crm-profile-pic avatar-130" name="user-1.jpg" src="../assets/images/user/user-1.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-2.jpg" src="../assets/images/user/user-2.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-3.jpg" src="../assets/images/user/user-3.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-4.jpg" src="../assets/images/user/user-4.jpg">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="saveChanges(event)">Save changes</button>
+            </div>
         </div>
     </div>
 </div>

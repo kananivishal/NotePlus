@@ -15,7 +15,7 @@ include "../includes/sidebar.php";
                 <div class="form-group text-center">
                     <div class="d-flex justify-content-center">
                         <div class="crm-profile-img-edit">
-                            <img class="crm-profile-pic avatar-130" src="../assets/images/user/1.jpg" alt="profile-pic">
+                            <img class="crm-profile-pic avatar-130" name="ImageName" id="profile-image" alt="profile-pic">
                             <!-- <div class="crm-p-image bg-primary">
                                 <i class="las la-pen upload-button"></i>
                                 <input class="file-upload" type="file" accept="image/*">
