@@ -1139,6 +1139,7 @@ include "../NotePlus/includes/sidebar.php";
                     <div class="form-group col-sm-6">
                         <label for="altconno">Title</label>
                         <input type="text" class="form-control" id="edit-title" placeholder="Enter Your Title">
+                        <input type="text" class="form-control" id="NoteId" placeholder="">
                     </div>
                     <div class="form-group col-lg-6">
                         <label>Select Folder</label>
@@ -1185,7 +1186,7 @@ include "../NotePlus/includes/sidebar.php";
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="noteEdit(event, noteIndex)">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="noteEdit(event)">Save changes</button>
             </div>
         </div>
     </div>

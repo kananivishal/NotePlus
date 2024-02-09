@@ -110,8 +110,16 @@ async function viewNoteEditModel(event, noteIndex) {
 
   if (status == 200) {
     document.getElementById("edit-title").value = response.title;
+    document.getElementById("NoteId").value = noteId;
     document.getElementById("quill-toolbar1").innerHTML = response.body;
     $("#editselectfolder").val(response.folderName);
+
+    document.getElementById("isPinnedCheckbox").checked = response.isPinned === 1;
+
+
+    document.getElementById("isFavoriteCheckbox").checked = response.isFavorite === 1;
+
+
     var quill = new Quill("#quill-toolbar1", {
       theme: "snow",
     });
@@ -138,21 +146,14 @@ async function viewNoteEditModel(event, noteIndex) {
 //     });
 //   }
 
-async function noteEdit(event, noteIndex) {
+async function noteEdit(event) {
   event?.preventDefault();
-
-
-  console.log("noteIndex:", noteIndex);
-
-
-    const note = cachedNotes[noteIndex];
-    const noteId = note.Id;
 
   const enteredEmails = ediCollaboratorAdd();
 
   const UserData = {
-    id: noteId,
-    Title: $("#title").val(),
+    id: $("#NoteId").val(),
+    Title: $("#edit-title").val(),
     Body: $("#quill-toolbar1").html(),
     Collaborators: enteredEmails,
     SelectedFolder: $("#editselectfolder").val(),
