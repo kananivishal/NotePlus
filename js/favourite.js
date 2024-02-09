@@ -12,6 +12,14 @@ async function showFavouriteNotes() {
     let rows = "";
     console.log(response);
     response.forEach((note, index) => {
+        const pinnedIcon =
+        note.IsPinned == 1
+          ? '<a data-toggle="tooltip" data-placement="top" data-original-title="pin content"><i class="las la-thumbtack mr-2"></i></a>'
+          : "";
+      const favoriteIcon =
+        note.IsFavourite == 1
+          ? '<a data-toggle="tooltip" data-placement="top" data-original-title="favorite"><i class="lar la-heart mr-2"></i></a>'
+          : "";
       rows += `
                 <div class="col-lg-4 col-md-6" >
                 <div class="card card-block card-stretch card-height card-bottom-border-info note-detail">
@@ -22,6 +30,8 @@ async function showFavouriteNotes() {
                             </svg>
                         </div>
                         <div class="card-header-toolbar d-flex align-items-center">
+                        ${pinnedIcon}
+                        ${favoriteIcon}
                             <div class="dropdown">
                                 <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button">
                                     <i class="ri-more-fill"></i>

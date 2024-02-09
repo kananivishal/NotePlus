@@ -36,6 +36,41 @@ async function sendOTP() {
   }
 }
 
+async function resendOTP() {
+  if (isSubmitting) {
+    return;
+  }
+
+  isSubmitting = true;
+
+  const userData = { email: userEmail };
+
+  try {
+    showSpinner("btnresendotp");
+
+    const [status, response] = await ajaxRequest(
+      "/otp/sendotp.php",
+      "POST",
+      userData,
+      false
+    );
+
+    if (status !== 200) {
+      let error = createErrorMessage(response.error);
+      document.getElementById("ResendOtpError").innerHTML = error;
+    } else {
+      console.log("OTP Resent Successfully");
+    }
+  } finally {
+    hideSpinner("btnresendotp");
+    // Set the text of the button back to "Resend OTP"
+    document.getElementById("btnresendotp").innerHTML = "Resend OTP";
+    isSubmitting = false;
+  }
+}
+
+
+
 async function verifyOTP() {
   if (isSubmitting) {
     return;

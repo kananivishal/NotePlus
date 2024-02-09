@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const folderId = urlParams.get('folderId')
+const folderId = urlParams.get("folderId");
 
 async function showNotes() {
   const UserData = {
@@ -12,10 +12,19 @@ async function showNotes() {
     true
   );
   if (status == 200) {
-// cachedNotes = response;
+    cachedNotes = response;
     let rows = "";
     console.log(response);
     response.forEach((note, index) => {
+      const pinnedIcon =
+        note.IsPinned == 1
+          ? '<a data-toggle="tooltip" data-placement="top" data-original-title="pin content"><i class="las la-thumbtack mr-2"></i></a>'
+          : "";
+      const favoriteIcon =
+        note.IsFavourite == 1
+          ? '<a data-toggle="tooltip" data-placement="top" data-original-title="favorite"><i class="lar la-heart mr-2"></i></a>'
+          : "";
+
       rows += `
                   <div class="col-lg-4 col-md-6" >
                   <div class="card card-block card-stretch card-height card-bottom-border-info note-detail">
@@ -26,13 +35,18 @@ async function showNotes() {
                               </svg>
                           </div>
                           <div class="card-header-toolbar d-flex align-items-center">
+                          
+                          ${pinnedIcon}
+
+                          ${favoriteIcon}
+
                               <div class="dropdown">
                                   <span class="dropdown-toggle dropdown-bg" id="note-dropdownMenuButton4" data-toggle="dropdown" aria-expanded="false" role="button">
                                       <i class="ri-more-fill"></i>
                                   </span>
                                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4" style="">
-                                      <a href="#" class="dropdown-item new-note1" data-toggle="modal" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
-                                      <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a>
+                                      <a href="#" class="dropdown-item new-note1" data-toggle="modal" data-target="#view-note" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
+                                      <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note" ><i class="las la-pen mr-3"></i>Edit</a>
                                       <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>
                                       </div>
                               </div>
