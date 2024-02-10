@@ -14,7 +14,6 @@ async function showNotes() {
   if (status == 200) {
     cachedNotes = response;
     let rows = "";
-    console.log(response);
     response.forEach((note, index) => {
       const pinnedIcon =
         note.IsPinned == 1
@@ -77,6 +76,7 @@ showNotes();
 
 async function folderDelete(event, folderId) {
   event?.preventDefault();
+  console.log(folderId);
 
   const [status, response] = await ajaxRequest(
     "/folder/delete.php",
@@ -85,24 +85,67 @@ async function folderDelete(event, folderId) {
     true
   );
 
-  const errorContainer = $('#FolderError');
-  errorContainer.show();
+  $("#FolderError").show();
 
   if (status === 200) {
     window.location.href = "/noteplus/";
   } else {
     let error = createErrorMessage(response.error);
-    errorContainer.html(error);
+    document.getElementById("FolderError").innerHTML = error;
+    // $('#FolderError').show();
     setTimeout(function () {
-      errorContainer.fadeOut('slow');
+      $("#FolderError").fadeOut("slow");
     }, 2000);
   }
 }
 
 
+async function viewFolderName(event, folderId) {
+  event?.preventDefault();
+  console.log(folderId);
+  const [status, response] = await ajaxRequest(
+    (path = "/folder/show-one.php"),
+    "POST",
+    { FolderId: folderId },
+    true
+  );
+  if (status !== 200) {
+    let error = createErrorMessage(response.error);
+    // document.getElementById("EditFolderError").innerHTML = error;
+    // setTimeout(function() {
+    //   $('#EditFolderError').fadeOut('slow');
+    // }, 2000);
+    console.log(response.error);
+  } else {
+    // window.location.href = "/noteplus/foldernotes";
+    console.log(response.name);
+  }
+}
+viewFolderName();
 
+async function editFolder(event) {
+  event?.preventDefault();
 
-
+  const UserData = {
+    Name: $("#editfolderName").val(),
+  };
+  const [status, response] = await ajaxRequest(
+    (path = "/folder/update.php"),
+    "POST",
+    UserData,
+    true
+  );
+  $("#EditFolderError").show();
+  if (status !== 200) {
+    let error = createErrorMessage(response.error);
+    document.getElementById("EditFolderError").innerHTML = error;
+    setTimeout(function () {
+      $("#EditFolderError").fadeOut("slow");
+    }, 2000);
+  } else {
+    window.location.href = "/noteplus/foldernotes";
+  }
+}
 
 function createErrorMessage(message) {
   return `<div class="alert  bg-danger" role="alert">
