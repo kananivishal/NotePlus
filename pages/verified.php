@@ -37,11 +37,7 @@
                                     <h4 class="logo-title ml-3">NotePlus</h4>
                                 </div>
                             </div>
-                            <h3 class="mb-2">Your Email is Successfully Verified.</h3>
-                            <!-- Email Form -->
-                            <form id="email-form">
-                            <a href="/noteplus/pages/login.php" type="button" id="btnemail" class="btn btn-primary" >Login</a>
-                            </form>
+                            <div id="verified"></div>
                         </div>
                     </div>
                 </div>
@@ -51,6 +47,7 @@
 
     <script src="/noteplus/js/signup.js"></script>
 
+    <script src="/noteplus/js/register/verified.js"></script>
     <script src="/noteplus/assets/js/backend-bundle.min.js"></script>
     <script src="/noteplus/assets/js/flex-tree.min.js"></script>
     <script src="/noteplus/assets/js/tree.js"></script>

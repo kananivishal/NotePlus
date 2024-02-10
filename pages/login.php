@@ -44,8 +44,8 @@ if (isset($_COOKIE['TOKEN'])) {
                         </div>
                      </div>
                      <h3 class="mb-2">Sign In</h3>
-                     <p>Login to stay connected.</p>
-                     <form onsubmit="login(); return false;">
+                     <!-- <p>Login to stay connected.</p> -->
+                     <!-- <form onsubmit="login(); return false;">
                         <div class="row">
                            <div class="col-lg-12">
                               <div class="floating-label form-group">
@@ -61,10 +61,7 @@ if (isset($_COOKIE['TOKEN'])) {
                               <div id="message"></div>
                            </div>
                            <div class="col-lg-6">
-                              <!-- <div class="custom-control custom-checkbox mb-3 text-left">
-                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                 <label class="custom-control-label" for="customCheck1">Remember Me</label>
-                              </div> -->
+                              
                            </div>
                            <div class="col-lg-6">
                               <a href="/noteplus/pages/forgot-password.php" class="text-primary float-right">Forgot Password?</a>
@@ -74,6 +71,58 @@ if (isset($_COOKIE['TOKEN'])) {
                         <p class="mt-3 mb-0">
                            Create an Account <a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a>
                         </p>
+                     </form> -->
+                     <form id="email-form">
+                        <p id="step-description">Enter your email.</p>
+                        <div class="col-lg-12">
+                           <div class="floating-label form-group">
+                              <input class="floating-input form-control" type="email" placeholder="" id="email">
+                              <label>Email</label>
+                           </div>
+                           <div id="EmailError"></div>
+                        </div>
+                        <!-- <button type="button" class="btn btn-primary mr-2" onclick="goBack('email-form')">Back</button> -->
+                        <button type="button" id="btnemail" class="btn btn-primary" onclick="sendOTP()">Next</button>
+                        <p class="mt-3 mb-0">Already have an Account <a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a></p>
+                     </form>
+                     <!-- OTP Form -->
+                     <form id="otp-form" style="display:none;">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="floating-label form-group">
+                                 <input class="floating-input form-control" type="number" placeholder="" id="otp">
+                                 <label>OTP</label>
+                              </div>
+                              <div id="OtpError"></div>
+                           </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mr-2" onclick="goBack('otp-form')">Back</button>
+                        <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
+                        <button type="button" id="btnresendotp" class="btn btn-primary" onclick="resendOTP()">Resend OTP</button>
+                        <p class="mt-3 mb-0"></p>
+
+                     </form>
+                     <form id="password-form" style="display:none;">
+
+                        <p id="step-description">Your Otp Has Verified Succesfully Click Home Button</p>
+                        <!-- <div class="row">
+                           <div class="col-lg-12">
+                              <div class="floating-label form-group">
+                                 <input class="floating-input form-control" type="password" placeholder="" id="password">
+                                 <label>Password</label>
+                              </div>
+                           </div>
+                           <div class="col-lg-12">
+                              <div class="floating-label form-group">
+                                 <input class="floating-input form-control" type="password" placeholder="" id="confirmPassword">
+                                 <label>Confirm Password</label>
+                              </div>
+                              <div id="PasswordError"></div>
+                           </div>
+                        </div> -->
+                        <!-- <button type="button" class="btn btn-primary mr-2" onclick="goBack('password-form')">Back</button> -->
+                        <a type="button" class="btn btn-primary" href="/noteplus/">Home</a>
+                        <p class="mt-3 mb-0"></p>
                      </form>
                   </div>
                </div>
@@ -83,7 +132,9 @@ if (isset($_COOKIE['TOKEN'])) {
    </div>
 
    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-   <script src="/noteplus/js/login.js"></script>
+   <!-- <script src="/noteplus/js/login.js"></script> -->
+   <script src="/noteplus/js/signup.js"></script>
+
 
    <!-- Backend Bundle JavaScript -->
    <script src="../assets/js/backend-bundle.min.js"></script>

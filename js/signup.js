@@ -31,8 +31,9 @@ async function sendOTP() {
     } else {
       // console.log("OTP Sent Successfully");
       userEmail = email;
-      document.getElementById("email-form").style.display = "none";
-      document.getElementById("otp-form").style.display = "block";
+      window.location.href = "/noteplus/pages/sendMail";
+      // document.getElementById("email-form").style.display = "none";
+      // document.getElementById("otp-form").style.display = "block";
     }
   } finally {
     hideSpinner("btnemail");

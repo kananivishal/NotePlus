@@ -1,4 +1,3 @@
-ErrorDocument 404 http://localhost/noteplus/pages/404
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f

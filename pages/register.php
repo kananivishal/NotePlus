@@ -54,7 +54,7 @@
                                 <p class="mt-3 mb-0">Already have an Account <a href="/noteplus/pages/login.php" class="text-primary"><b>Sign In</b></a></p>
                             </form>
                             <!-- OTP Form -->
-                            <form id="otp-form" style="display:none;">
+                            <!-- <form id="otp-form" style="display:none;">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="floating-label form-group">
@@ -68,9 +68,9 @@
                                 <button type="button" id="btnotp" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
                                 <button type="button" id="btnresendotp" class="btn btn-primary" onclick="resendOTP()">Resend OTP</button>
                                 <p class="mt-3 mb-0"></p>
-                            </form>
+                            </form> -->
                             <!-- Password Form -->
-                            <form id="password-form" style="display:none;">
+                            <!-- <form id="password-form" style="display:none;">
                                 <p id="step-description">Enter your password.</p>
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -90,7 +90,7 @@
                                 <button type="button" class="btn btn-primary mr-2" onclick="goBack('password-form')">Back</button>
                                 <button type="button" id="btnsignup" class="btn btn-primary" onclick="submitPassword()">Submit</button>
                                 <p class="mt-3 mb-0"></p>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
     <script src="/noteplus/assets/js/slider.js"></script>
     <script src="/noteplus/assets/js/app.js"></script>
 
-    <script>
+    <!-- <script>
         function goBack(formId) {
             document.getElementById(formId).style.display = "none";
             document.getElementById('email-form').style.display = "none";
@@ -123,10 +123,10 @@
                 document.getElementById('otp-form').style.display = "block";
             }
         }
-    </script>
+    </script> -->
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function preventBack() {
             window.history.forward();
         }
@@ -134,7 +134,7 @@
         window.onunload = function() {
             null
         };
-    </script>
+    </script> -->
 
 </body>
 

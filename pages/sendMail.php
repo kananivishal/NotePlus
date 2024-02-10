@@ -37,11 +37,10 @@
                                     <h4 class="logo-title ml-3">NotePlus</h4>
                                 </div>
                             </div>
-                            <h3 class="mb-2">Please Wait!</h3>
+                            <h3 class="mb-2">Please Verify Email</h3>
                             <!-- Email Form -->
                             <form id="email-form">
-                                <p id="step-description">Send Your Email In Given Email.</p>
-                                
+                                <p id="step-description">Send Email In Your Given Email</p>                               
                             </form>
                         </div>
                     </div>
