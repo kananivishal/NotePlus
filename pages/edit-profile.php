@@ -1,8 +1,8 @@
 <?php
 include "../includes/header.php";
 include "../includes/sidebar.php";
-$db = mysqli_connect("localhost","root","","noteplus"); 
-$result =mysqli_query($db,"SELECT ImageName FROM userprofile");
+$db = mysqli_connect("localhost", "root", "", "noteplus");
+$result = mysqli_query($db, "SELECT ImageName FROM userprofile");
 ?>
 <div class="col-lg-12">
     <div class="card">
@@ -52,15 +52,14 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                                     <div class="profile-img-edit">
                                         <div class="crm-profile-img-edit" id="imageName">
                                             <?php
-                                            while($row = mysqli_fetch_array($result))
-                                            {
+                                            while ($row = mysqli_fetch_array($result)) {
 
-                                                echo "<img class='crm-profile-pic avatar-100' src='/noteplus/assets/images/user/".$row['ImageName']."' name='ImageName' id='profile-image'  alt='profile-pic'>";
+                                                echo "<img class='crm-profile-pic avatar-100' src='/noteplus/assets/images/user/" . $row['ImageName'] . "' name='ImageName' id='profile-image'  alt='profile-pic'>";
                                             }
                                             ?>
                                             <div class="crm-p-image bg-primary">
                                                 <i class="las la-pen upload-button" data-toggle="modal" data-target="#image"></i>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +72,7 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="dob">Date Of Birth:</label>
-                                    <input class="form-control" id="dob">
+                                    <input class="form-control" name="dob" type="date" id="dob">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="mobilenumber">Mobile Number:</label>
@@ -114,10 +113,7 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                                 <div class="form-group col-sm-6">
                                     <label>Country:</label>
                                     <select class="form-control" id="country">
-                                        <!-- <option>Caneda</option> -->
-                                        <!-- <option>Noida</option> -->
                                         <option selected="">India</option>
-                                        <!-- <option>India</option> -->
                                         <!-- <option>Africa</option> -->
                                     </select>
                                 </div>
@@ -161,7 +157,7 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                         <form id="change-password">
                             <div class="form-group">
                                 <label for="cpass">Current Password:</label>
-                                <a class="float-right" href="/noteplus/pages/forgot-password.php" >Forgot Password</a>
+                                <a class="float-right" href="/noteplus/pages/forgot-password.php">Forgot Password</a>
                                 <input type="Password" class="form-control" id="confirmpassword" value="">
                             </div>
                             <div class="form-group">
@@ -172,7 +168,7 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                                 <label for="vpass">Verify Password:</label>
                                 <input type="Password" class="form-control" id="verifypassword" value="">
                             </div>
-                            <div id="EditProfileError"></div>
+                            <div id="EditPasswordError"></div>
                             <button type="button" class="btn btn-primary mr-2" onclick="changePassword()">Submit</button>
                             <button type="reset" class="btn iq-bg-danger">Cancel</button>
                         </form>
