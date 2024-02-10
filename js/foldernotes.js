@@ -46,7 +46,7 @@ async function showNotes() {
                                   </span>
                                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4" style="">
                                       <a href="#" class="dropdown-item new-note1" data-toggle="modal" data-target="#view-note" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
-                                      <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note" ><i class="las la-pen mr-3"></i>Edit</a>
+                                      <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note" onclick="viewNoteEditModel(event,${index})"><i class="las la-pen mr-3"></i>Edit</a>
                                       <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>
                                       </div>
                               </div>
@@ -74,3 +74,43 @@ async function showNotes() {
   return response.id;
 }
 showNotes();
+
+async function folderDelete(event, folderId) {
+  event?.preventDefault();
+
+  const [status, response] = await ajaxRequest(
+    "/folder/delete.php",
+    "POST",
+    { id: folderId },
+    true
+  );
+
+  const errorContainer = $('#FolderError');
+  errorContainer.show();
+
+  if (status === 200) {
+    window.location.href = "/noteplus/";
+  } else {
+    let error = createErrorMessage(response.error);
+    errorContainer.html(error);
+    setTimeout(function () {
+      errorContainer.fadeOut('slow');
+    }, 2000);
+  }
+}
+
+
+
+
+
+
+function createErrorMessage(message) {
+  return `<div class="alert  bg-danger" role="alert">
+            <div class="iq-alert-text text-left">
+              ${message}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>`;
+}
