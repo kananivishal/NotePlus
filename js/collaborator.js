@@ -8,6 +8,8 @@ async function addEmail(event) {
 
   if (isEmailAlreadyAdded(newEmail)) {
     // console.log("Email is already added.");
+    let error = createErrorMessage("Email is already added.");
+    $('#CollaboratorError').html(error).show();
     setTimeout(function() {
       $('#CollaboratorError').fadeOut('slow');
     }, 2000);
@@ -120,9 +122,9 @@ async function showSharedNotes() {
                                     <i class="ri-more-fill"></i>
                                 </span>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="note-dropdownMenuButton4" style="">
-                                    <a href="#" class="dropdown-item new-note1" data-toggle="modal" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
-                                    <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note1"><i class="las la-pen mr-3"></i>Edit</a>
-                                    <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>                               
+                                <a href="#" class="dropdown-item new-note1" data-toggle="modal" data-target="#view-note" onclick="viewNoteModel(event, ${index})"><i class="las la-eye mr-3"></i>View</a>
+                                <a href="#" class="dropdown-item edit-note1" data-toggle="modal" data-target="#edit-note" onclick="viewNoteEditModel(event,${index})"><i class="las la-pen mr-3"></i>Edit</a>
+                                <button class="dropdown-item" data-extra-toggle="delete" data-closest-elem=".card" onclick="noteDelete(event, ${index})"><i class="las la-trash-alt mr-3"></i>Delete</button>                             
                                 </div>
                             </div>
                         </div>

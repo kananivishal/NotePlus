@@ -69,6 +69,8 @@
 <script src="/noteplus/js/pinned.js"></script>
 <script src="/noteplus/js/favourite.js"></script>
 <script src="/noteplus/js/edit-notes.js"></script>
+<script src="/noteplus/js/perfome.js"></script>
+
 
 </body>
 

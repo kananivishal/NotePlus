@@ -100,8 +100,8 @@ async function showNotes() {
     response.forEach((note, index) => {
       const pinnedIcon =
         note.IsPinned == 1
-          ? '<a data-toggle="tooltip" data-placement="top" data-original-title="pin content"><i class="las la-thumbtack mr-2"></i></a>'
-          : "";
+        ? '<a data-toggle="tooltip" data-placement="top" data-original-title="pin content"><i class="las la-thumbtack mr-2"></i></a>'
+        : "";
       const favoriteIcon =
         note.IsFavourite == 1
           ? '<a data-toggle="tooltip" data-placement="top" data-original-title="favorite"><i class="lar la-heart mr-2"></i></a>'

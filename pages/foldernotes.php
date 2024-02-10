@@ -3,9 +3,10 @@ include "../includes/header.php";
 include "../includes/sidebar.php";
 ?>
 <div class="col-lg-12">
-<div class="card card-block card-stretch position-relative">
+    <div class="card card-block card-stretch position-relative">
         <div class="card-body custom-notes-space">
-            <button type="button" class="btn btn-warning mt-2 float-right ml-2"><i class="ri-delete-bin-2-fill pr-0"></i></button>
+            <div id="FolderError"></div>
+            <button type="button" class="btn btn-warning mt-2 float-right ml-2" onclick="folderDelete(event,folderId)"><i class="ri-delete-bin-2-fill pr-0"></i></button>
             <button type="button" class="btn btn-success mt-2 float-right"><i class="ri-pencil-fill pr-0"></i></button>
             <h3 class="">Your Notes</h3>
             <div class="iq-tab-content">
@@ -313,23 +314,36 @@ include "../includes/sidebar.php";
                 <div class="row align-items-center">
                     <div class="form-group col-sm-6">
                         <label for="altconno">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Enter Your Title">
+                        <input type="text" class="form-control" id="edit-title" placeholder="Enter Your Title">
+                        <input type="text" class="form-control" id="NoteId" placeholder="" hidden>
                     </div>
                     <div class="form-group col-lg-6">
                         <label>Select Folder</label>
-                        <select class="form-control" id="selectfolder">
+                        <select class="form-control" id="editselectfolder">
 
                         </select>
                     </div>
-                </div>
-                <div class="card card-transparent card-block card-stretch event-note">
-                    <div class="card-body px-0 bukmark">
-                        <div class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">
-                            <div class="quill-tool">
-                            </div>
-                            <div class="iq-full-screen"><a href="#" class="" id="btnFullscreen"><i class="las la-expand-arrows-alt font-size-18"></i></a></div>
+                    <!-- <div class="form-group m-lg-1">
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" id="isPinnedCheckbox" name="isPinnedCheckbox" class="custom-control-input" onchange="updateNoteStatus(noteId,$('#FavoriteCheckbox').prop('checked'))">
+                            <label class="custom-control-label" for="isPinnedCheckbox"> IsPinned </label>
                         </div>
-                        <div id="editor" id="quill-toolbar">
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                            <input type="checkbox" id="isFavoriteCheckbox" name="isFavoriteCheckbox" class="custom-control-input" onchange="updateNoteStatus(noteId, $('#PinnedCheckbox').prop('checked'))">
+                            <label class="custom-control-label" for="isFavoriteCheckbox"> IsFavourite </label>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="content edit-notes">
+                    <div class="card card-transparent card-block card-stretch event-note mb-0">
+                        <div class="card-body px-0 bukmark">
+                            <div class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">
+                                <div class="quill-tool">
+                                </div>
+                            </div>
+                            <div id="quill-toolbar1" contenteditable="true">
+                                <!-- <p>Virtual Digital Marketing Course every week on Monday, Wednesday and Saturday.Virtual Digital Marketing Course every week on Monday</p> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -337,22 +351,23 @@ include "../includes/sidebar.php";
                     <div class="pb-3">
                         <h5 class="mb-2">Invite Someone</h5>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="emailInput" placeholder="Enter Name or Email">
+                            <input type="text" class="form-control" id="emailEditInput" placeholder="Enter Name or Email">
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-info" onclick="addEmail(event)"><i class="ri-add-fill"></i></button>
+                                <button type="button" class="btn btn-info" onclick="addEditEmail(event)"><i class="ri-add-fill"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div id="displayEmails" class="mb-3" style="word-wrap: break-word;"></div>
+                    <div id="displayEditEmails" class="mb-3" style="word-wrap: break-word;"></div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="noteEdit(event)">Save changes</button>
             </div>
         </div>
     </div>
 </div>
+
 <?php
 include "../includes/footer.php";
 ?>

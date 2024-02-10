@@ -1139,7 +1139,7 @@ include "../NotePlus/includes/sidebar.php";
                     <div class="form-group col-sm-6">
                         <label for="altconno">Title</label>
                         <input type="text" class="form-control" id="edit-title" placeholder="Enter Your Title">
-                        <input type="text" class="form-control" id="NoteId" placeholder="">
+                        <input type="text" class="form-control" id="NoteId" placeholder="" hidden>
                     </div>
                     <div class="form-group col-lg-6">
                         <label>Select Folder</label>
