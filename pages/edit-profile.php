@@ -108,27 +108,29 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                                         <option>19-32</option>
                                         <option selected="">33-45</option>
                                         <option>46-62</option>
-                                        <option>63 > </option>
+                                        <option>63 or more </option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label>Country:</label>
                                     <select class="form-control" id="country">
-                                        <option>Caneda</option>
-                                        <option>Noida</option>
-                                        <option selected="">USA</option>
-                                        <option>India</option>
-                                        <option>Africa</option>
+                                        <!-- <option>Caneda</option> -->
+                                        <!-- <option>Noida</option> -->
+                                        <option selected="">India</option>
+                                        <!-- <option>India</option> -->
+                                        <!-- <option>Africa</option> -->
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label>State:</label>
                                     <select class="form-control" id="state">
-                                        <option>California</option>
-                                        <option>Florida</option>
-                                        <option selected="">Georgia</option>
-                                        <option>Connecticut</option>
-                                        <option>Louisiana</option>
+                                        <option selected="">Gujrat</option>
+                                        <option>Rajasthan</option>
+                                        <option>Maharastra</option>
+                                        <option>Utter Pradesh</option>
+                                        <option>West Bengal</option>
+                                        <option>Karnataka</option>
+                                        <option>Odisha</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
@@ -170,7 +172,7 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                                 <label for="vpass">Verify Password:</label>
                                 <input type="Password" class="form-control" id="verifypassword" value="">
                             </div>
-                            <div id="message" id=></div>
+                            <div id="EditProfileError"></div>
                             <button type="button" class="btn btn-primary mr-2" onclick="changePassword()">Submit</button>
                             <button type="reset" class="btn iq-bg-danger">Cancel</button>
                         </form>
@@ -292,8 +294,13 @@ $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
                 <div class="image-selection" id="image">
                     <img class="crm-profile-pic avatar-130" name="user-1.jpg" src="../assets/images/user/user-1.jpg">
                     <img class="crm-profile-pic avatar-130" name="user-2.jpg" src="../assets/images/user/user-2.jpg">
-                    <img class="crm-profile-pic avatar-130" name="user-3.jpg" src="../assets/images/user/user-3.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-3.jpg" src="../assets/images/user/user-3.jpg"><br><br>
                     <img class="crm-profile-pic avatar-130" name="user-4.jpg" src="../assets/images/user/user-4.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-5.jpg" src="../assets/images/user/user-5.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-6.jpg" src="../assets/images/user/user-6.jpg"><br><br>
+                    <img class="crm-profile-pic avatar-130" name="user-7.jpg" src="../assets/images/user/user-7.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-8.jpg" src="../assets/images/user/user-8.jpg">
+                    <img class="crm-profile-pic avatar-130" name="user-9.jpg" src="../assets/images/user/user-9.jpg">
                 </div>
             </div>
             <div class="modal-footer">

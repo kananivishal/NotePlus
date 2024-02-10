@@ -1,3 +1,7 @@
+<?php
+$db = mysqli_connect("localhost","root","","noteplus"); 
+$result =mysqli_query($db,"SELECT ImageName FROM userprofile");
+?>
 <div class="wrapper">
     <div class="iq-top-navbar">
         <div class="iq-navbar-custom">
@@ -15,7 +19,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto navbar-list align-items-center">
-                            <li class="nav-item nav-icon search-content">
+                            <!-- <li class="nav-item nav-icon search-content">
                                 <a href="#" class="search-toggle rounded" id="h1-dropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="ri-search-line"></i>
                                 </a>
@@ -91,8 +95,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nav-icon dropdown mail-content">
+                            </li> -->
+                            <!-- <li class="nav-item nav-icon dropdown mail-content">
                                 <a href="#" class="search-toggle dropdown-toggle nav-icon-1" id="h1-dropdownMenuButton004" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="">
                                         <svg width="20" class="svg-icon" id="main-n-020" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -159,7 +163,7 @@
                             <li class="caption-content">
                                 <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="h-dropdownMenuButton001" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img src="/noteplus/assets/images/user/1.jpg" class="img-fluid rounded avatar-50" alt="user">
-                                </a>
+                                </a> -->
                                 <div class="dropdown-menu dropdown-menu-right w-100 border-0 py-2" aria-labelledby="h-dropdownMenuButton001">
                                     <a class="dropdown-item mb-2" href="/noteplus/pages/profile.php">
                                         <i class="lar la-user-circle font-size-20 mr-1"></i>
@@ -203,7 +207,12 @@
         </div>
         <div class="sidebar-caption dropdown">
             <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="/noteplus/assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user">
+                <?php
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo"<img class='img-fluid rounded avatar-50 mr-3' src='/noteplus/assets/images/user/".$row['ImageName']."' name='ImageName'  alt='profile-pic'>";
+                }
+                ?>
                 <div class="caption">
                     <h6 class="mb-0 line-height">Profile</h6>
                 </div>
@@ -806,7 +815,7 @@
                                 <button type="button" class="mt-2 btn btn-primary show-folder-button" data-toggle="modal" href="#" data-target="#add-folder">
                                     <i class="las la-folder pr-2"></i>Create Notebooks</button>
                             </div>
-                            <div id="NotesError"></div>
+<div id="NotesError"></div>
                             <div class="note-right media align-items-top hide-note-button d-none">
                                 <div class="mr-3"><a href="#" class="btn view-btn body-bg" data-toggle="modal" data-target="#share-note">Share</a></div>
                                 <div class="form-group m-lg-1">
@@ -837,7 +846,7 @@
                                             <h5 class="mb-2">Folder Name</h5>
                                             <input type="text" class="form-control" id="folderName" placeholder="Enter Folder Name">
                                         </div>
-                                        <div id="FolderError"></div>
+<div id="FolderError"></div>
                                         <div class="col-lg-12 mt-4">
                                             <div class="d-flex flex-wrap align-items-ceter justify-content-center">
                                                 <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
@@ -870,8 +879,8 @@
                                                 </div>
                                             </div>
                                             <div id="displayEmails" class="mb-3" style="word-wrap: break-word;"></div>
+                                            <div id="CollaboratorError"></div>
                                             <div class="col-lg-12 mt-4">
-                                                <div id="CollaboratorError"></div>
                                                 <div class="d-flex flex-wrap align-items-center justify-content-center">
                                                     <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
                                                     <div class="btn btn-outline-primary" data-dismiss="modal" onclick="collaboratorAdd()">Submit</div>
@@ -1053,7 +1062,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 p-0 d-flex justify-content-end">
+                                                                                <div class="col-lg-12 p-0 d-flex justify-content-end">
                                             <button class="btn btn-outline-primary" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button">Close</button>
                                             <button class="btn btn-primary ml-2" data-extra-toggle="toggle" data-extra-class-show=".show-note-button" data-extra-class-hide=".hide-note-button" onclick="noteAdd(event)">Save</button>
                                         </div>
@@ -1062,4 +1071,4 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
