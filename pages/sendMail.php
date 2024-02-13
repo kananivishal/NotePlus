@@ -49,7 +49,7 @@
         </section>
     </div>
 
-    <script src="/noteplus/js/signup.js"></script>
+    <!-- <script src="/noteplus/js/signup.js"></script> -->
 
     <script src="/noteplus/assets/js/backend-bundle.min.js"></script>
     <script src="/noteplus/assets/js/flex-tree.min.js"></script>

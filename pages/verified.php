@@ -45,7 +45,7 @@
         </section>
     </div>
 
-    <script src="/noteplus/js/signup.js"></script>
+    <script src="/noteplus/js/register/verified.js"></script>
 
     <script src="/noteplus/js/register/verified.js"></script>
     <script src="/noteplus/assets/js/backend-bundle.min.js"></script>

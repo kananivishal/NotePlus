@@ -21,12 +21,12 @@ async function sendOTP() {
       false
     );
 
-    $('#EmailError').show();
+    $("#EmailError").show();
     if (status !== 200) {
       let error = createErrorMessage(response.error);
       document.getElementById("EmailError").innerHTML = error;
-      setTimeout(function() {
-        $('#EmailError').fadeOut('slow');
+      setTimeout(function () {
+        $("#EmailError").fadeOut("slow");
       }, 2000);
     } else {
       // console.log("OTP Sent Successfully");
@@ -41,119 +41,144 @@ async function sendOTP() {
   }
 }
 
-async function resendOTP() {
-  if (isSubmitting) {
-    return;
-  }
+// async function resendOTP() {
+//   if (isSubmitting) {
+//     return;
+//   }
 
-  isSubmitting = true;
+//   isSubmitting = true;
 
-  const userData = { email: userEmail };
+//   const userData = { email: userEmail };
 
-  try {
-    showSpinner("btnresendotp");
+//   try {
+//     showSpinner("btnresendotp");
 
-    const [status, response] = await ajaxRequest(
-      "/otp/sendotp.php",
-      "POST",
-      userData,
-      false
-    );
+//     const [status, response] = await ajaxRequest(
+//       "/otp/sendotp.php",
+//       "POST",
+//       userData,
+//       false
+//     );
 
-    $('#OtpError').show();
-    if (status !== 200) {
-      let error = createErrorMessage(response.error);
-      document.getElementById("ResendOtpError").innerHTML = error;
-    } else {
-      document.getElementById("OtpError").innerHTML = error;
-      setTimeout(function() {
-        $('#OtpError').fadeOut('slow');
-      }, 2000);
-    }
-  } finally {
-    hideSpinner("btnresendotp");
-    document.getElementById("btnresendotp").innerHTML = "Resend OTP";
-    isSubmitting = false;
-  }
-}
+//     $("#OtpError").show();
+//     if (status !== 200) {
+//       let error = createErrorMessage(response.error);
+//       document.getElementById("ResendOtpError").innerHTML = error;
+//     } else {
+//       document.getElementById("OtpError").innerHTML = error;
+//       setTimeout(function () {
+//         $("#OtpError").fadeOut("slow");
+//       }, 2000);
+//     }
+//   } finally {
+//     hideSpinner("btnresendotp");
+//     document.getElementById("btnresendotp").innerHTML = "Resend OTP";
+//     isSubmitting = false;
+//   }
+// }
 
+// async function verifyOTP() {
+//   if (isSubmitting) {
+//     return;
+//   }
 
+//   isSubmitting = true;
 
-async function verifyOTP() {
-  if (isSubmitting) {
-    return;
-  }
+//   const otp = document.getElementById("otp").value;
+//   const userData = { email: userEmail, otp };
 
-  isSubmitting = true;
+//   try {
+//     showSpinner("btnotp");
 
-  const otp = document.getElementById("otp").value;
-  const userData = { email: userEmail, otp };
+//     const [status, response] = await ajaxRequest(
+//       "/otp/verifyotp.php",
+//       "POST",
+//       userData,
+//       false
+//     );
 
-  try {
-    showSpinner("btnotp");
+//     $('#OtpError').show();
+//     if (status !== 200) {
+//       let error = createErrorMessage(response.error);
+//       document.getElementById("OtpError").innerHTML = error;
+//       setTimeout(function() {
+//         $('#OtpError').fadeOut('slow');
+//       }, 2000);
+//     } else {
+//       document.getElementById("otp-form").style.display = "none";
+//       document.getElementById("password-form").style.display = "block";
+//     }
+//   } finally {
+//     hideSpinner("btnotp");
+//     isSubmitting = false;
+//   }
+// }
 
-    const [status, response] = await ajaxRequest(
-      "/otp/verifyotp.php",
-      "POST",
-      userData,
-      false
-    );
+// async function verifyEmail() {
+//   const userData = { email: email, otp: otp };
 
-    $('#OtpError').show();
-    if (status !== 200) {
-      let error = createErrorMessage(response.error);
-      document.getElementById("OtpError").innerHTML = error;
-      setTimeout(function() {
-        $('#OtpError').fadeOut('slow');
-      }, 2000);
-    } else {
-      document.getElementById("otp-form").style.display = "none";
-      document.getElementById("password-form").style.display = "block";
-    }
-  } finally {
-    hideSpinner("btnotp");
-    isSubmitting = false;
-  }
-}
+//   const [status, response] = await ajaxRequest(
+//     "/otp/verifyotp.php",
+//     "POST",
+//     userData,
+//     false
+//   );
 
-async function submitPassword() {
-  if (isSubmitting) {
-    return;
-  }
-  isSubmitting = true;
+//   if (status !== 200) {
+//     const verify = `<h3 class="mb-2" id="">Something Went Wrong Please Try Again</h3>
+//         <form id="email-form">
+//         <a href="/noteplus/pages/register.php" type="button" id="btnemail" class="btn btn-primary" >Register</a>
+//         </form>`;
+//     document.getElementById("verified").innerHTML = verify;
+//   } else {
+//   submitPassword();
+//     const verify = `<h3 class="mb-2" id="">Your Email is Successfully Verified.</h3>
+//     <form id="email-form">
+//     <a href="/noteplus/pages/login.php" type="button" id="btnemail" class="btn btn-primary" >Login</a>
+//     </form>`;
+//     document.getElementById("verified").innerHTML = verify;
+//   }
+// }
+// verifyEmail();
 
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
-  const userData = {
-    Email: userEmail,
-    Password: password,
-    ConfirmPassword: confirmPassword,
-  };
-  try {
-    showSpinner("btnsignup");
+// async function submitPassword() {
+//   if (isSubmitting) {
+//     return;
+//   }
+//   isSubmitting = true;
 
-    const [status, response] = await ajaxRequest(
-      "/auth/signup.php",
-      "POST",
-      userData,
-      false
-    );
+//   // const password = document.getElementById("password").value;
+//   // const confirmPassword = document.getElementById("confirmPassword").value;
+//   const userData = {
+//     Email: userEmail,
+//     // Password: password,
+//     // ConfirmPassword: confirmPassword,
+//   };
+//   // try {
+//   showSpinner("btnsignup");
 
-    $('#PasswordError').show();
-    if (status !== 200) {
-      let error = createErrorMessage(response.error);
-      document.getElementById("PasswordError").innerHTML = error;
-      setTimeout(function() {
-        $('#PasswordError').fadeOut('slow');
-      }, 2000);
-    } else {
-      location.href = "/noteplus/pages/login.php";
-    }
-  } finally {
-    hideSpinner("btnsignup");
-    isSubmitting = false;
-  }
-}
+//   const [status, response] = await ajaxRequest(
+//     "/auth/signup.php",
+//     "POST",
+//     userData,
+//     false
+//   );
+
+//   $("#PasswordError").show();
+//   if (status !== 200) {
+//     let error = createErrorMessage(response.error);
+//     document.getElementById("PasswordError").innerHTML = error;
+//     setTimeout(function () {
+//       $("#PasswordError").fadeOut("slow");
+//     }, 2000);
+//   } else {
+//     location.href = "/noteplus/pages/login.php";
+//   }
+//   // } finally {
+//   //   hideSpinner("btnsignup");
+//   //   isSubmitting = false;
+//   // }
+// }
 
 function createErrorMessage(message) {
   return `<div class="alert  bg-danger" role="alert">

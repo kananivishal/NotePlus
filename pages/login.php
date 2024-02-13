@@ -83,7 +83,7 @@ if (isset($_COOKIE['TOKEN'])) {
                         </div>
                         <!-- <button type="button" class="btn btn-primary mr-2" onclick="goBack('email-form')">Back</button> -->
                         <button type="button" id="btnemail" class="btn btn-primary" onclick="sendOTP()">Next</button>
-                        <p class="mt-3 mb-0">Already have an Account <a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a></p>
+                        <p class="mt-3 mb-0">Creat an Account<a href="/noteplus/pages/register.php" class="text-primary"><b>Sign Up</b></a></p>
                      </form>
                      <!-- OTP Form -->
                      <form id="otp-form" style="display:none;">
@@ -132,8 +132,8 @@ if (isset($_COOKIE['TOKEN'])) {
    </div>
 
    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-   <!-- <script src="/noteplus/js/login.js"></script> -->
-   <script src="/noteplus/js/signup.js"></script>
+   <script src="/noteplus/js/login.js"></script>
+   <!-- <script src="/noteplus/js/signup.js"></script> -->
 
 
    <!-- Backend Bundle JavaScript -->
@@ -158,7 +158,7 @@ if (isset($_COOKIE['TOKEN'])) {
    <!-- app JavaScript -->
    <script src="../assets/js/app.js"></script>
 
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
       function preventBack() {
          window.history.forward();
       }
@@ -167,7 +167,7 @@ if (isset($_COOKIE['TOKEN'])) {
          null
       };
    </script>
-
+ -->
 
 
 </body>
