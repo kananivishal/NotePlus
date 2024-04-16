@@ -1,6 +1,8 @@
 <?php
 $db = mysqli_connect("localhost","root","","noteplus"); 
 $result =mysqli_query($db,"SELECT ImageName FROM userprofile");
+$row = mysqli_fetch_array($result);
+$imageName = $row['ImageName'];
 ?>
 <div class="wrapper">
     <div class="iq-top-navbar">

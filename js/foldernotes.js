@@ -76,7 +76,7 @@ showNotes();
 
 async function folderDelete(event, folderId) {
   event?.preventDefault();
-  console.log(folderId);
+  // console.log(folderId);
 
   const [status, response] = await ajaxRequest(
     "/folder/delete.php",

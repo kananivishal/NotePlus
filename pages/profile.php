@@ -3,6 +3,8 @@ include "../includes/header.php";
 include "../includes/sidebar.php";
 $db = mysqli_connect("localhost", "root", "", "noteplus");
 $result = mysqli_query($db, "SELECT ImageName FROM userprofile");
+$row = mysqli_fetch_array($result);
+$imageName = $row['ImageName'];
 ?>
 
 <div class="col-xl-3 col-lg-4">
